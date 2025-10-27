@@ -1,0 +1,3 @@
+shell-integration-features = ssh-terminfo,ssh-env
+command = /usr/bin/zsh
+theme = TokyoNight Night
