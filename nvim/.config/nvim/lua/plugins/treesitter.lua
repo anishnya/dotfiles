@@ -53,6 +53,21 @@ require("nvim-treesitter.configs").setup(
                     -- Loops
                     ["al"] = { query = "@loop.outer", desc = "Outer Loop" },
                     ["il"] = { query = "@loop.inner", desc = "Inner Loop" },
+
+                    -- Assignments
+                    ["aag"] = { query = "@assignment.outer", desc = "Outer Assignment" },
+                    ["iag"] = { query = "@assignment.inner", desc = "Inner Assignment" },
+
+                    ["aal"] = { query = "@assignment.lhs", desc = "LHS Assignment" },
+                    ["aar"] = { query = "@assignment.rhs", desc = "RHS Assignment" },
+
+                    -- Calls
+                    ["ak"] = { query = "@call.outer", desc = "Outer Call" },
+                    ["ik"] = { query = "@call.inner", desc = "Inner Call" },
+
+                    -- Parameters
+                    ["ap"] = { query = "@parameter.outer", desc = "Outer Parameter" },
+                    ["ip"] = { query = "@parameter.inner", desc = "Inner Parameter" },
                 },
                 include_surrounding_whitespace = true,
             },

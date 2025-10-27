@@ -37,10 +37,8 @@ keymap.set("n", "<leader>fm", function()
     fzf.marks()
 end, { desc = "Find marks", noremap = true })
 
-keymap.set("n", "<leader>fm", function()
-    aerial.fzf_picker()
-end, { desc = "Find Symbols" })
 keymap.set("n", "<leader>u", require("undotree").toggle, { noremap = true, silent = true })
+
 -- LSP Keymaps
 keymap.set("n", "<leader>lr", function()
     fzf.lsp_references()
@@ -60,6 +58,15 @@ end, { desc = "LSP Incoming Calls", noremap = true })
 keymap.set("n", "<leader>lo", function()
     fzf.lsp_outgoing_calls()
 end, { desc = "LSP Outgoing Calls", noremap = true })
+keymap.set("n", "<leader>ly", function()
+    fzf.lsp_document_symbols()
+end, { desc = "LSP Document Symbols", noremap = true })
+keymap.set("n", "<leader>lw", function()
+    fzf.lsp_workspace_symbols()
+end, { desc = "LSP Workspace Symbols", noremap = true })
+keymap.set("n", "<leader>lb", function()
+    fzf.lsp_live_workspace_symbols()
+end, { desc = "LSP Live Workspace Symbols", noremap = true })
 
 -- Buffers
 -- Cycle through buffers
@@ -67,7 +74,6 @@ keymap.set("n", "[b", "<cmd>bprevious<cr>", { desc = "Previous Buffer" })
 keymap.set("n", "]b", "<cmd>bnext<cr>", { desc = "Next Buffer" })
 
 -- Buffer management menu under <leader>b
-keymap.set("n", "<leader>bb", "<cmd>Telescope buffers<cr>", { desc = "Find Buffer" })
 keymap.set("n", "<leader>bc", "<cmd>bdelete<cr>", { desc = "Close Current Buffer" })
 keymap.set("n", "<leader>bO", "<cmd>%bd|e#|bd#<cr>", { desc = "Close All Other Buffers (Focus)" })
 
@@ -92,3 +98,11 @@ end, { desc = "Render Markdown Preview", noremap = true })
 -- Blank Lines
 keymap.set('n', '<Leader>o', 'o<Esc>', { noremap = true, silent = true })
 keymap.set('n', '<Leader>O', 'O<Esc>', { noremap = true, silent = true })
+
+-- Dial Setup
+keymap.set("n", "<C-a>", function()
+    require("dial.map").manipulate("increment", "normal")
+end)
+keymap.set("n", "<C-x>", function()
+    require("dial.map").manipulate("decrement", "normal")
+end)
