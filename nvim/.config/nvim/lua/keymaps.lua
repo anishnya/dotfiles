@@ -126,6 +126,9 @@ keymap.set("n", "<leader>ct", "<cmd>ComfyLineNumbers toggle<cr>", { desc = "Togg
 -- Twilight number toggle
 keymap.set("n", "<leader>tt", "<cmd>Twilight<cr>", { desc = "Toggle twlight" })
 
+-- Other useful remaps
 vim.keymap.set("x", "<leader>p", [["_dP]])
 vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
 vim.keymap.set("n", "<leader>Y", [["+Y]])
+
+vim.keymap.set("n", "Q", "<nop>")
