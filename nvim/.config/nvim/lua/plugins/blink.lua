@@ -8,8 +8,8 @@ vim.pack.add({
         name = "blink",
     },
     {
-        src = "https://github.com/giuxtaposition/blink-cmp-copilot",
-        name = "blink-cmp-copilot",
+        src = "https://github.com/fang2hou/blink-copilot",
+        name = "blink-copilot",
     },
 }, {
     load = true,
@@ -21,10 +21,19 @@ require("blink.cmp").setup({
         providers = {
             copilot = {
                 name = "copilot",
-                module = "blink-cmp-copilot",
+                module = "blink-copilot",
                 score_offset = 100,
                 async = true,
             },
+        },
+    },
+    completion = {
+        menu = { border = "single" },
+        list = { selection = { preselect = true, auto_insert = true } },
+        documentation = {
+            auto_show = true,
+            auto_show_delay_ms = 100,
+            window = { border = "single" },
         },
     },
 })

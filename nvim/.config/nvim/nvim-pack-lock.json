@@ -4,9 +4,17 @@
       "rev": "e30b7f2",
       "src": "https://github.com/numToStr/Comment.nvim"
     },
+    "Treewalker.nvim": {
+      "rev": "5895593",
+      "src": "https://github.com/aaronik/Treewalker.nvim"
+    },
     "aerial.nvim": {
       "rev": "5e687b5",
       "src": "https://github.com/stevearc/aerial.nvim"
+    },
+    "atone.nvim": {
+      "rev": "7a5ef04",
+      "src": "https://github.com/XXiaoA/atone.nvim"
     },
     "blink": {
       "rev": "5037cfa",
@@ -16,6 +24,10 @@
       "rev": "439cff7",
       "src": "https://github.com/giuxtaposition/blink-cmp-copilot"
     },
+    "blink-copilot": {
+      "rev": "7ad8209",
+      "src": "https://github.com/fang2hou/blink-copilot"
+    },
     "catppuccin": {
       "rev": "af58927",
       "src": "https://github.com/catppuccin/nvim"
@@ -23,6 +35,10 @@
     "colorful-menu.nvim": {
       "rev": "d5b97d2",
       "src": "https://github.com/xzbdmw/colorful-menu.nvim"
+    },
+    "comfy-line-numbers.nvim": {
+      "rev": "31e2f92",
+      "src": "https://github.com/mluders/comfy-line-numbers.nvim"
     },
     "copilot.lua": {
       "rev": "3123983",
@@ -35,6 +51,10 @@
     "dial.nvim": {
       "rev": "f0404ec",
       "src": "https://github.com/monaqa/dial.nvim"
+    },
+    "eyeliner.nvim": {
+      "rev": "8f197eb",
+      "src": "https://github.com/jinh0/eyeliner.nvim"
     },
     "friendly-snippets": {
       "rev": "572f566",
@@ -88,6 +108,10 @@
       "rev": "d843392",
       "src": "https://github.com/nvim-mini/mini.cursorword"
     },
+    "mini.move": {
+      "rev": "f33406a",
+      "src": "https://github.com/nvim-mini/mini.move"
+    },
     "mini.pairs": {
       "rev": "b9aada8",
       "src": "https://github.com/nvim-mini/mini.pairs"
@@ -112,6 +136,10 @@
       "rev": "71385f1",
       "src": "https://github.com/nvim-treesitter/nvim-treesitter-textobjects"
     },
+    "nvim-various-textobjs": {
+      "rev": "aede158",
+      "src": "https://github.com/chrisgrieser/nvim-various-textobjs"
+    },
     "oil.nvim": {
       "rev": "7194872",
       "src": "https://github.com/stevearc/oil.nvim"
@@ -124,9 +152,17 @@
       "rev": "2aae268",
       "src": "https://github.com/tris203/precognition.nvim"
     },
+    "rainbow-delimiters.nvim": {
+      "rev": "b6b3c9e",
+      "src": "https://github.com/HiPhish/rainbow-delimiters.nvim"
+    },
     "render-markdown.nvim": {
       "rev": "475d3ad",
       "src": "https://github.com/MeanderingProgrammer/render-markdown.nvim"
+    },
+    "tabout.nvim": {
+      "rev": "9a34994",
+      "src": "https://github.com/abecodes/tabout.nvim"
     },
     "telescope": {
       "rev": "b4da76b",
@@ -144,6 +180,10 @@
       "rev": "e898cfd",
       "src": "https://github.com/johmsalas/text-case.nvim"
     },
+    "tiny-inline-diagnostic.nvim": {
+      "rev": "994c13d",
+      "src": "https://github.com/rachartier/tiny-inline-diagnostic.nvim"
+    },
     "tokyonight": {
       "rev": "d14614c",
       "src": "https://github.com/folke/tokyonight.nvim"
@@ -155,6 +195,10 @@
     "treesitter": {
       "rev": "42fc28ba",
       "src": "https://github.com/nvim-treesitter/nvim-treesitter"
+    },
+    "twilight.nvim": {
+      "rev": "664e752",
+      "src": "https://github.com/folke/twilight.nvim"
     },
     "undotree": {
       "rev": "1c3e753",

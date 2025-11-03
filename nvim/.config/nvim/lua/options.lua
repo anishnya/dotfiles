@@ -33,4 +33,6 @@ vim.cmd.colorscheme("tokyonight")
 vim.g.netrw_liststyle = 1
 vim.g.netrw_sort_by = "size"
 
+vim.diagnostic.config({ virtual_text = false })
+
 require("vim._extui").enable({})

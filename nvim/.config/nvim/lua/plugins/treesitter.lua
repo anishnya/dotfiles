@@ -16,17 +16,8 @@ vim.pack.add({
     {
         src = "https://github.com/nvim-treesitter/nvim-treesitter-textobjects",
     },
-})
-
--- treesitter
-require("nvim-treesitter.configs").setup({
-    -- A list of parser names, or "all" (the five listed parsers should always be installed)
-    ensure_installed = languages_list,
-    sync_install = false,
-    auto_install = true,
-    ignore_install = {},
-    highlight = {
-        enable = true,
+    {
+        src = "https://github.com/chrisgrieser/nvim-various-textobjs",
     },
 })
 
@@ -34,6 +25,18 @@ require("treesitter-context").setup()
 
 require("nvim-treesitter.configs").setup(
     {
+        -- A list of parser names, or "all" (the five listed parsers should always be installed)
+        ensure_installed = languages_list,
+        sync_install = false,
+        auto_install = true,
+        ignore_install = {},
+        highlight = {
+            enable = true,
+        },
+        indent = {
+            enable = true
+        },
+        -- Tree Sitter Textobjects
         textobjects = {
             select = {
                 enable = true,
@@ -68,9 +71,16 @@ require("nvim-treesitter.configs").setup(
                     -- Parameters
                     ["ap"] = { query = "@parameter.outer", desc = "Outer Parameter" },
                     ["ip"] = { query = "@parameter.inner", desc = "Inner Parameter" },
+
                 },
                 include_surrounding_whitespace = true,
             },
         }
     }
 )
+
+require("various-textobjs").setup({
+    keymaps = {
+        useDefaults = true
+    }
+})

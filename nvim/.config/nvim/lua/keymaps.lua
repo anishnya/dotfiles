@@ -2,7 +2,7 @@ local keymap = vim.keymap
 local opts = { noremap = true, silent = true }
 
 -- NvimTree
-keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
+keymap.set("n", "<leader>et", ":NvimTreeToggle<CR>", opts)
 keymap.set("n", "<leader>ef", ":NvimTreeFocus<CR>", opts)
 
 -- Split window
@@ -17,7 +17,7 @@ keymap.set("n", "sl", "<C-w>l")
 
 -- fzf-lua
 local fzf = require("fzf-lua")
-local aerial = require("aerial")
+
 keymap.set("n", "<leader>ff", function()
     fzf.files()
 end, { desc = "Find files", noremap = true })
@@ -37,7 +37,9 @@ keymap.set("n", "<leader>fm", function()
     fzf.marks()
 end, { desc = "Find marks", noremap = true })
 
-keymap.set("n", "<leader>u", require("undotree").toggle, { noremap = true, silent = true })
+-- Undo Tree
+keymap.set("n", "<leader>ut", "<cmd>Atone toggle<CR>", { noremap = true, silent = true })
+keymap.set("n", "<leader>uf", "<cmd>Atone focus<CR>", { noremap = true, silent = true })
 
 -- LSP Keymaps
 keymap.set("n", "<leader>lr", function()
@@ -96,8 +98,8 @@ keymap.set("n", "<leader>rp", function()
 end, { desc = "Render Markdown Preview", noremap = true })
 
 -- Blank Lines
-keymap.set('n', '<Leader>o', 'o<Esc>', { noremap = true, silent = true })
-keymap.set('n', '<Leader>O', 'O<Esc>', { noremap = true, silent = true })
+keymap.set('n', '<Leader>b', 'o<Esc>', { noremap = true, silent = true })
+keymap.set('n', '<Leader>B', 'O<Esc>', { noremap = true, silent = true })
 
 -- Dial Setup
 keymap.set("n", "<C-a>", function()
@@ -106,3 +108,24 @@ end)
 keymap.set("n", "<C-x>", function()
     require("dial.map").manipulate("decrement", "normal")
 end)
+
+-- Treewalker Keymaps
+keymap.set({ 'n', 'v' }, '<C-k>', '<cmd>Treewalker Up<cr>', { silent = true })
+keymap.set({ 'n', 'v' }, '<C-j>', '<cmd>Treewalker Down<cr>', { silent = true })
+keymap.set({ 'n', 'v' }, '<C-h>', '<cmd>Treewalker Left<cr>', { silent = true })
+keymap.set({ 'n', 'v' }, '<C-l>', '<cmd>Treewalker Right<cr>', { silent = true })
+
+keymap.set('n', '<C-S-k>', '<cmd>Treewalker SwapUp<cr>', { silent = true })
+keymap.set('n', '<C-S-j>', '<cmd>Treewalker SwapDown<cr>', { silent = true })
+keymap.set('n', '<C-S-h>', '<cmd>Treewalker SwapLeft<cr>', { silent = true })
+keymap.set('n', '<C-S-l>', '<cmd>Treewalker SwapRight<cr>', { silent = true })
+
+-- Line number toggle
+keymap.set("n", "<leader>ct", "<cmd>ComfyLineNumbers toggle<cr>", { desc = "Toggle line numbers" })
+--
+-- Twilight number toggle
+keymap.set("n", "<leader>tt", "<cmd>Twilight<cr>", { desc = "Toggle twlight" })
+
+vim.keymap.set("x", "<leader>p", [["_dP]])
+vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
+vim.keymap.set("n", "<leader>Y", [["+Y]])

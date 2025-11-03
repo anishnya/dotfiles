@@ -19,3 +19,20 @@ zinit ice as"command" from"gh-r" \
           atclone"./starship init zsh > init.zsh; ./starship completions zsh > _starship" \
           atpull"%atclone" src"init.zsh"
 zinit light starship/starship
+
+# Rust
+source $HOME/.cargo/env
+
+# Other tools
+eval "$(zoxide init zsh)"
+
+# Quick navigation
+alias ..='z ..'
+alias ...='z ../..'
+alias ....='z ../../..'
+alias .....='z ../../../..'
+
+alias zl='zls'
+zls() {
+  z "$@" && eza -lAh
+}

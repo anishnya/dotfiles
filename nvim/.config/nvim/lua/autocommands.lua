@@ -11,3 +11,8 @@ vim.api.nvim_create_autocmd("TextYankPost", {
         vim.highlight.on_yank({ higroup = "IncSearch", timeout = 1000 })
     end,
 })
+
+vim.api.nvim_create_autocmd("UIEnter", {
+    pattern = "*",
+    command = ":NvimTreeToggle<CR>",
+})
