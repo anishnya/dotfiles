@@ -1,74 +1,15 @@
+-- Non plugin specific keymaps
 local keymap = vim.keymap
 local opts = { noremap = true, silent = true }
-
--- NvimTree
-keymap.set("n", "<leader>et", ":NvimTreeToggle<CR>", opts)
-keymap.set("n", "<leader>ef", ":NvimTreeFocus<CR>", opts)
 
 -- Split window
 keymap.set("n", "ss", ":split<Return>", opts)
 keymap.set("n", "sv", ":vsplit<Return>", opts)
 
--- Move window
-keymap.set("n", "sh", "<C-w>h")
-keymap.set("n", "sk", "<C-w>k")
-keymap.set("n", "sj", "<C-w>j")
-keymap.set("n", "sl", "<C-w>l")
-
--- fzf-lua
-local fzf = require("fzf-lua")
-
-keymap.set("n", "<leader>ff", function()
-    fzf.files()
-end, { desc = "Find files", noremap = true })
-keymap.set("n", "<leader>fs", function()
-    fzf.live_grep_native()
-end, { desc = "Find string (grep)", noremap = true })
-keymap.set("n", "<leader>fc", function()
-    fzf.lgrep_curbuf()
-end, { desc = "Find in Current Buffer", noremap = true })
-keymap.set("n", "<leader>fb", function()
-    fzf.buffers()
-end, { desc = "Find buffers", noremap = true })
-keymap.set("n", "<leader>fr", function()
-    fzf.registers()
-end, { desc = "Find in registers", noremap = true })
-keymap.set("n", "<leader>fm", function()
-    fzf.marks()
-end, { desc = "Find marks", noremap = true })
-
--- Undo Tree
+-- -- Undo Tree
 keymap.set("n", "<leader>ut", "<cmd>Atone toggle<CR>", { noremap = true, silent = true })
 keymap.set("n", "<leader>uf", "<cmd>Atone focus<CR>", { noremap = true, silent = true })
-
--- LSP Keymaps
-keymap.set("n", "<leader>lr", function()
-    fzf.lsp_references()
-end, { desc = "LSP References", noremap = true })
-keymap.set("n", "<leader>ld", function()
-    fzf.lsp_definitions()
-end, { desc = "LSP Defintions", noremap = true })
-keymap.set("n", "<leader>lc", function()
-    fzf.lsp_declarations()
-end, { desc = "LSP Declarations", noremap = true })
-keymap.set("n", "<leader>li", function()
-    fzf.lsp_implementations()
-end, { desc = "LSP Implementations", noremap = true })
-keymap.set("n", "<leader>ln", function()
-    fzf.lsp_incoming_calls()
-end, { desc = "LSP Incoming Calls", noremap = true })
-keymap.set("n", "<leader>lo", function()
-    fzf.lsp_outgoing_calls()
-end, { desc = "LSP Outgoing Calls", noremap = true })
-keymap.set("n", "<leader>ly", function()
-    fzf.lsp_document_symbols()
-end, { desc = "LSP Document Symbols", noremap = true })
-keymap.set("n", "<leader>lw", function()
-    fzf.lsp_workspace_symbols()
-end, { desc = "LSP Workspace Symbols", noremap = true })
-keymap.set("n", "<leader>lb", function()
-    fzf.lsp_live_workspace_symbols()
-end, { desc = "LSP Live Workspace Symbols", noremap = true })
+--
 
 -- Buffers
 -- Cycle through buffers
@@ -86,28 +27,11 @@ keymap.set("n", "<leader>bl", "<cmd>buffer #<cr>", { desc = "Go to Last Buffer" 
 keymap.set("n", "<leader>nn", "<cmd>enew<cr>", { desc = "New Empty Buffer" })
 keymap.set("n", "<leader>nt", "<cmd>tabnew<cr>", { desc = "New Tab" })
 
--- Oil Keymap
-keymap.set("n", "<leader>o", "<CMD>Oil<CR>", { desc = "Open Oil" })
-
--- Aerial Kep Map
-keymap.set("n", "<leader>a", "<cmd>AerialToggle<CR>")
-
--- Render Markdown
-keymap.set("n", "<leader>rp", function()
-    require("render-markdown").preview()
-end, { desc = "Render Markdown Preview", noremap = true })
-
 -- Blank Lines
-keymap.set('n', '<Leader>b', 'o<Esc>', { noremap = true, silent = true })
-keymap.set('n', '<Leader>B', 'O<Esc>', { noremap = true, silent = true })
-
--- Dial Setup
-keymap.set("n", "<C-a>", function()
-    require("dial.map").manipulate("increment", "normal")
-end)
-keymap.set("n", "<C-x>", function()
-    require("dial.map").manipulate("decrement", "normal")
-end)
+keymap.set('n', '<Leader>o', 'o<Esc>', { noremap = true, silent = true })
+keymap.set('n', '<Leader>O', 'O<Esc>', { noremap = true, silent = true })
+keymap.set('n', '<Leader>i', 'o<Esc>o', { noremap = true, silent = true })
+keymap.set('n', '<Leader>I', 'O<Esc>O', { noremap = true, silent = true })
 
 -- Treewalker Keymaps
 keymap.set({ 'n', 'v' }, '<C-k>', '<cmd>Treewalker Up<cr>', { silent = true })
@@ -120,15 +44,17 @@ keymap.set('n', '<C-S-j>', '<cmd>Treewalker SwapDown<cr>', { silent = true })
 keymap.set('n', '<C-S-h>', '<cmd>Treewalker SwapLeft<cr>', { silent = true })
 keymap.set('n', '<C-S-l>', '<cmd>Treewalker SwapRight<cr>', { silent = true })
 
--- Line number toggle
-keymap.set("n", "<leader>ct", "<cmd>ComfyLineNumbers toggle<cr>", { desc = "Toggle line numbers" })
---
--- Twilight number toggle
-keymap.set("n", "<leader>tt", "<cmd>Twilight<cr>", { desc = "Toggle twlight" })
+-- LSP Buffer Format Keymap
+keymap.set('n', '<leader>tf', function()
+    vim.g.format_on_save = not vim.g.format_on_save
+    --
+    -- Show a notification with the new status
+    if vim.g.format_on_save then
+        vim.notify("Format on save: ON", vim.log.levels.INFO)
+    else
+        vim.notify("Format on save: OFF", vim.log.levels.INFO)
+    end
+end, { desc = '[T]oggle [F]ormat on Save' })
 
 -- Other useful remaps
-vim.keymap.set("x", "<leader>p", [["_dP]])
-vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
-vim.keymap.set("n", "<leader>Y", [["+Y]])
-
-vim.keymap.set("n", "Q", "<nop>")
+keymap.set("n", "Q", "<nop>")

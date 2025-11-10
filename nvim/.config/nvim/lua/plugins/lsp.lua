@@ -30,37 +30,24 @@ vim.lsp.config("copilot", {
 
 vim.lsp.enable("copilot")
 
--- LSP Keymaps and buffer config
-local map = vim.keymap.set
-local fzf = require("fzf-lua")
-
 vim.api.nvim_create_autocmd("LspAttach", {
     callback = function(ev)
         local client = vim.lsp.get_client_by_id(ev.data.client_id)
         local buffer = ev.buf
 
         if client then
-            -- Enable completion
-            if client:supports_method(vim.lsp.protocol.Methods.textDocument_completion) then
-                vim.opt.completeopt = { "menu", "menuone", "noinsert", "fuzzy", "popup" }
-                vim.lsp.completion.enable(true, client.id, buffer, { autotrigger = true })
-                map("i", "<C-Space>", function()
-                    vim.lsp.completion.get()
-                end, { desc = "Trigger lsp completion" })
-            end
-
-            -- Add normal-mode keymappings for signature help
-            if client:supports_method("textDocument/signatureHelp") then
-                map("n", "<leader>ls", function()
-                    vim.lsp.buf.signature_help()
-                end, { desc = "Trigger lsp signature help" })
-            end
-
             -- Auto-format on save
             if client:supports_method("textDocument/formatting") then
+                vim.api.nvim_create_augroup("LspFormatOnSave", { clear = true })
+
                 vim.api.nvim_create_autocmd("BufWritePre", {
                     buffer = buffer,
+                    group = "LspFormatOnSave",
                     callback = function()
+                        if not vim.g.format_on_save then
+                            return
+                        end
+
                         vim.lsp.buf.format({ bufnr = buffer, id = client.id })
                     end,
                 })

@@ -5,14 +5,27 @@ vim.api.nvim_create_autocmd("User", {
     end,
 })
 
-vim.api.nvim_create_autocmd("TextYankPost", {
-    group = vim.api.nvim_create_augroup("highlight_yank", { clear = true }),
+-- syntax highlighting for dotenv files
+vim.api.nvim_create_autocmd("BufRead", {
+    group = vim.api.nvim_create_augroup("dotenv_ft", { clear = true }),
+    pattern = { ".env", ".env.*" },
     callback = function()
-        vim.highlight.on_yank({ higroup = "IncSearch", timeout = 1000 })
+        vim.bo.filetype = "dosini"
     end,
 })
 
-vim.api.nvim_create_autocmd("UIEnter", {
-    pattern = "*",
-    command = ":NvimTreeToggle<CR>",
+-- show cursorline only in active window enable
+vim.api.nvim_create_autocmd({ "WinEnter", "BufEnter" }, {
+    group = vim.api.nvim_create_augroup("active_cursorline", { clear = true }),
+    callback = function()
+        vim.opt_local.cursorline = true
+    end,
+})
+
+-- show cursorline only in active window disable
+vim.api.nvim_create_autocmd({ "WinLeave", "BufLeave" }, {
+    group = "active_cursorline",
+    callback = function()
+        vim.opt_local.cursorline = false
+    end,
 })

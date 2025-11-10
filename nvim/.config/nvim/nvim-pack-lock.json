@@ -28,6 +28,10 @@
       "rev": "7ad8209",
       "src": "https://github.com/fang2hou/blink-copilot"
     },
+    "blink.indent": {
+      "rev": "e28c938",
+      "src": "https://github.com/saghen/blink.indent"
+    },
     "catppuccin": {
       "rev": "af58927",
       "src": "https://github.com/catppuccin/nvim"
@@ -52,6 +56,10 @@
       "rev": "f0404ec",
       "src": "https://github.com/monaqa/dial.nvim"
     },
+    "diffview.nvim": {
+      "rev": "4516612",
+      "src": "https://github.com/sindrets/diffview.nvim"
+    },
     "eyeliner.nvim": {
       "rev": "8f197eb",
       "src": "https://github.com/jinh0/eyeliner.nvim"
@@ -68,12 +76,20 @@
       "rev": "1ee5c1f",
       "src": "https://github.com/lewis6991/gitsigns.nvim"
     },
+    "highlight-undo.nvim": {
+      "rev": "ee32e12",
+      "src": "https://github.com/tzachar/highlight-undo.nvim"
+    },
     "indent-blankline.nvim": {
       "rev": "005b560",
       "src": "https://github.com/lukas-reineke/indent-blankline.nvim"
     },
     "lualine": {
       "rev": "b8c2315",
+      "src": "https://github.com/nvim-lualine/lualine.nvim"
+    },
+    "lualine.nvim": {
+      "rev": "3946f01",
       "src": "https://github.com/nvim-lualine/lualine.nvim"
     },
     "lz.n": {
@@ -128,6 +144,10 @@
       "rev": "ac98db2",
       "src": "https://github.com/neovim/nvim-lspconfig"
     },
+    "nvim-treesitter": {
+      "rev": "42fc28ba",
+      "src": "https://github.com/nvim-treesitter/nvim-treesitter"
+    },
     "nvim-treesitter-context": {
       "rev": "41847d3",
       "src": "https://github.com/nvim-treesitter/nvim-treesitter-context"
@@ -139,6 +159,14 @@
     "nvim-various-textobjs": {
       "rev": "aede158",
       "src": "https://github.com/chrisgrieser/nvim-various-textobjs"
+    },
+    "nvim-web-devicons": {
+      "rev": "8dcb311",
+      "src": "https://github.com/nvim-tree/nvim-web-devicons"
+    },
+    "oil-git.nvim": {
+      "rev": "d1f27a5",
+      "src": "https://github.com/benomahony/oil-git.nvim"
     },
     "oil.nvim": {
       "rev": "7194872",
@@ -160,6 +188,18 @@
       "rev": "475d3ad",
       "src": "https://github.com/MeanderingProgrammer/render-markdown.nvim"
     },
+    "smart-splits.nvim": {
+      "rev": "601cc64",
+      "src": "https://github.com/mrjones2014/smart-splits.nvim"
+    },
+    "smear-cursor.nvim": {
+      "rev": "abfa583",
+      "src": "https://github.com/sphamba/smear-cursor.nvim"
+    },
+    "snacks.nvim": {
+      "rev": "64179b9",
+      "src": "https://github.com/folke/snacks.nvim"
+    },
     "tabout.nvim": {
       "rev": "9a34994",
       "src": "https://github.com/abecodes/tabout.nvim"
@@ -180,12 +220,20 @@
       "rev": "e898cfd",
       "src": "https://github.com/johmsalas/text-case.nvim"
     },
+    "timber.nvim": {
+      "rev": "405a9af",
+      "src": "https://github.com/Goose97/timber.nvim"
+    },
     "tiny-inline-diagnostic.nvim": {
       "rev": "994c13d",
       "src": "https://github.com/rachartier/tiny-inline-diagnostic.nvim"
     },
     "tokyonight": {
       "rev": "d14614c",
+      "src": "https://github.com/folke/tokyonight.nvim"
+    },
+    "tokyonight.nvim": {
+      "rev": "5da1b76",
       "src": "https://github.com/folke/tokyonight.nvim"
     },
     "tree": {
@@ -204,6 +252,10 @@
       "rev": "1c3e753",
       "src": "https://github.com/jiaoshijie/undotree"
     },
+    "vim-matchup": {
+      "rev": "1c276e1",
+      "src": "https://github.com/andymass/vim-matchup"
+    },
     "web-devicons": {
       "rev": "b8221e4",
       "src": "https://github.com/nvim-tree/nvim-web-devicons"
@@ -211,6 +263,14 @@
     "which-key": {
       "rev": "b4177e3",
       "src": "https://github.com/folke/which-key.nvim"
+    },
+    "which-key.nvim": {
+      "rev": "3aab214",
+      "src": "https://github.com/folke/which-key.nvim"
+    },
+    "yanky.nvim": {
+      "rev": "04775cc",
+      "src": "https://github.com/gbprod/yanky.nvim"
     }
   }
 }

@@ -87,7 +87,15 @@ end
 
 ---@type vim.lsp.Config
 return {
-    cmd = { 'gopls' },
+    cmd = { "gopls", "-remote=auto" },
+    flags = {
+        debounce_text_changes = 2000,
+        exit_timeout = 500,
+    },
+    init_options = {
+        staticcheck = true,
+        gofumpt = true,
+    },
     filetypes = { 'go', 'gomod', 'gowork', 'gotmpl' },
     root_dir = function(bufnr, on_dir)
         local fname = vim.api.nvim_buf_get_name(bufnr)

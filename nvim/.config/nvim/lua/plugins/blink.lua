@@ -36,4 +36,5 @@ require("blink.cmp").setup({
             window = { border = "single" },
         },
     },
+    fuzzy = { implementation = "prefer_rust" },
 })

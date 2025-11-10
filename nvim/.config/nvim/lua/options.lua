@@ -1,7 +1,7 @@
 -- Options
-vim.g.mapleader = " "
-
 local opt = vim.opt
+
+opt.clipboard = "unnamed,unnamedplus"
 opt.guicursor = "i:block"
 opt.signcolumn = "yes:1"
 opt.termguicolors = true

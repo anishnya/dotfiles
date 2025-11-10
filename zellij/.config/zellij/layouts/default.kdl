@@ -1,0 +1,72 @@
+layout {
+    default_tab_template {
+        pane size=2 borderless=true {
+            plugin location="zjstatus" {
+                color_black            "#1a1b26"
+                color_grey              "#565f89"
+                color_white            "#c0caf5"
+                color_red              "#db4b4b"
+                color_green            "#9ece6a"
+                color_yellow           "#e0af68"
+                color_cyan             "#73daca"
+                color_blue             "#7dcfff"
+                color_pink          "#baa2ba"
+                color_purple          "#c099f7"
+
+                format_left   "{mode} {tabs}"
+                format_center ""
+                format_right  "{pipe_zjstatus_hints}{datetime}#[bg=$purple,fg=$black,bold] {session} "
+                format_space  ""
+
+                pipe_zjstatus_hints_format "#[bg=$purple,fg=$black,bold] {output} "
+
+                border_enabled  "false"
+                border_char     "─"
+                border_format   "#[fg=$grey]{char}"
+                border_position "top"
+
+                hide_frame_for_single_pane "true"
+
+                mode_locked      "#[bg=$purple,fg=$black,bold]  LOCK "
+                mode_normal      "#[bg=$pink,fg=$black,bold]  NORMAL "
+                mode_resize      "#[bg=$red,fg=$black,bold]  RESIZE "
+                mode_pane        "#[bg=$blue,fg=$black,bold]  PANE"
+                mode_move        "#[bg=$cyan,fg=$black,bold]  MOVE "
+                mode_tab         "#[bg=$green,fg=$black,bold]  TAB "
+                mode_scroll      "#[bg=$white,fg=$black,bold]  SCROLL "
+                mode_search      "#[bg=$yellow,fg=$black,bold]  SEARCH "
+                mode_entersearch "#[bg=$yellow,fg=$black,bold]  ENTER SEARCH "
+                mode_renametab   "#[bg=$purple,fg=$black,bold]  RENAME TAB "
+                mode_renamepane  "#[bg=$purple,fg=$black,bold]  RENAME PANE "
+                mode_session     "#[bg=$red,fg=$black,bold]  SESSION "
+                mode_tmux        "#[bg=$white,fg=$black,bold]  TMUX "
+
+                tab_active              "#[bg=$purple,fg=$black,bold] {index} {name} "
+                tab_active_fullscreen   "#[bg=$purple,fg=$black,bold] {fullscreen_indicator} {index} {name} "
+                tab_active_sync         "#[bg=$purple,fg=$black,bold] {sync_indicator} {index} {name} "
+
+                tab_normal              "#[fg=$grey,bold] {index} {name} "
+                tab_normal_fullscreen   "#[fg=$grey,bold] {fullscreen_indicator} {index} {name} "
+                tab_normal_sync         "#[fg=$grey,bold] {sync_indicator} {index} {name} "
+
+                tab_separator " "
+
+                tab_sync_indicator       "󰓦"
+                tab_fullscreen_indicator "󰊓"
+                tab_floating_indicator   "⬚"
+
+                tab_rename              "#[bg=$green,fg=$black,bold] {index} {name} {floating_indicator} "
+
+                tab_display_count         "9"
+                tab_truncate_start_format "#[fg=$yellow]  +{count}  "
+                tab_truncate_end_format   "#[fg=$yellow]   +{count} "
+
+                datetime        "#[fg=$grey,bold] {format} "
+                datetime_format "%d %b %H:%M"
+                datetime_timezone "America/Los_Angeles"
+            }
+        }
+        children
+    }
+    tab name=""
+}
