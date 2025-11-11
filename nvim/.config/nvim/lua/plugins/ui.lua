@@ -92,26 +92,6 @@ local lualine = {
     }
 }
 
----@type lz.n.pack.Spec
-local snacks = {
-    src = "https://github.com/folke/snacks.nvim",
-    data = {
-        "snacks.nvim",
-        keys = {
-            { "<leader>de", function() Snacks.dim.enable() end,  desc = "Enable Dimming" },
-            { "<leader>dd", function() Snacks.dim.disable() end, desc = "Diable Dimming" },
-        },
-        after = function()
-            require("snacks").setup(
-                {
-                    dim = { enabled = true },
-                    input = { enabled = true },
-                }
-            )
-        end,
-    }
-}
-
 loader.load_plugins({
     {
         plug = color_scheme,

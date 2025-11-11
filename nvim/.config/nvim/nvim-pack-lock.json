@@ -164,6 +164,10 @@
       "rev": "8dcb311",
       "src": "https://github.com/nvim-tree/nvim-web-devicons"
     },
+    "oil-git-status.nvim": {
+      "rev": "4b5cf53",
+      "src": "https://github.com/refractalize/oil-git-status.nvim"
+    },
     "oil-git.nvim": {
       "rev": "d1f27a5",
       "src": "https://github.com/benomahony/oil-git.nvim"

@@ -6,8 +6,8 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-# Regular ZSH settings and options
-_comp_options+=(globdots)
+# Zinit Intialization
+setopt GLOB_DOTS
 
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 [ ! -d $ZINIT_HOME ] && mkdir -p "$(dirname $ZINIT_HOME)"
@@ -27,8 +27,9 @@ zinit ice as"command" from"gh-r" \
           atpull"%atclone" src"init.zsh"
 zinit light starship/starship
 
-zinit ice from"gl" atclone"sudo make install"
+zinit ice from"gl" make 
 zinit load dwt1/shell-color-scripts
+
 # Rust
 source $HOME/.cargo/env
 
@@ -39,6 +40,7 @@ export EDITOR="$VISUAL"
 # Other tools
 eval "$(zoxide init zsh)"
 alias bat='batcat'
+alias ls='eza'
 
 # Quick navigation
 alias ..='z ..'
@@ -50,3 +52,10 @@ alias zl='zls'
 zls() {
   z "$@" && eza -lAh
 }
+
+# Avoid fzf conflict
+bindkey "^[[A" up-line-or-history
+bindkey "^[[B" down-line-or-history
+
+# fzf binds
+source <(fzf --zsh)

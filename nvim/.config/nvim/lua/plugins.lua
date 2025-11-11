@@ -2,6 +2,7 @@
 require("plugins.lz")
 require("plugins.snacks")
 require("plugins.treesitter")
+require("plugins.gitsigns")
 require("plugins.mini_setup")
 require("plugins.ui")
 require("plugins.utils")

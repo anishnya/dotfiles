@@ -27,19 +27,7 @@ local oil = {
                     },
                 },
             })
-
-            -- Trigger load oil-git
-            require("lz.n").trigger_load("oil-git.nvim")
         end,
-    }
-}
-
-
----@type lz.n.pack.Spec
-local oil_git = {
-    src = "https://github.com/benomahony/oil-git.nvim",
-    data = {
-        "oil-git.nvim",
     }
 }
 
@@ -159,9 +147,6 @@ loader.load_plugins(
         },
         {
             plug = oil,
-        },
-        {
-            plug = oil_git,
         },
         {
             plug = which_key,

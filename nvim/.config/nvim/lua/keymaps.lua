@@ -24,8 +24,8 @@ keymap.set("n", "<leader>bO", "<cmd>%bd|e#|bd#<cr>", { desc = "Close All Other B
 keymap.set("n", "<leader>b1", "<cmd>buffer 1<cr>", { desc = "Go to Buffer 1" })
 keymap.set("n", "<leader>bl", "<cmd>buffer #<cr>", { desc = "Go to Last Buffer" })
 
-keymap.set("n", "<leader>nn", "<cmd>enew<cr>", { desc = "New Empty Buffer" })
-keymap.set("n", "<leader>nt", "<cmd>tabnew<cr>", { desc = "New Tab" })
+keymap.set("n", "<leader>be", "<cmd>enew<cr>", { desc = "New Empty Buffer" })
+keymap.set("n", "<leader>tn", "<cmd>tabnew<cr>", { desc = "New Tab" })
 
 -- Blank Lines
 keymap.set('n', '<Leader>o', 'o<Esc>', { noremap = true, silent = true })
