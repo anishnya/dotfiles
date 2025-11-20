@@ -1,3 +1,10 @@
-shell-integration-features = ssh-terminfo,ssh-env
+shell-integration-features = true
+
+alpha-blending = native
+window-colorspace = display-p3
 theme = TokyoNight Night
 macos-option-as-alt = left
+
+clipboard-read = allow
+clipboard-write = allow
+clipboard-trim-trailing-spaces

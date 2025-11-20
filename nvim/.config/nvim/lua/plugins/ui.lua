@@ -121,6 +121,17 @@ local noice = {
         lazy = false,
     }
 }
+
+---@type lz.n.pack.Spec
+local hl_args = {
+    src = "https://github.com/m-demare/hlargs.nvim",
+    data = {
+        "hlargs.nvim",
+        after = function()
+            require("hlargs").setup()
+        end,
+    }
+}
 loader.load_plugins({
     {
         plug = color_scheme,
@@ -139,5 +150,8 @@ loader.load_plugins({
     },
     {
         plug = lualine,
+    },
+    {
+        plug = hl_args,
     },
 })

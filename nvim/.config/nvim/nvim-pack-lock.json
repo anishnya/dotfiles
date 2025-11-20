@@ -84,6 +84,10 @@
       "rev": "ee32e12",
       "src": "https://github.com/tzachar/highlight-undo.nvim"
     },
+    "hlargs.nvim": {
+      "rev": "0b29317",
+      "src": "https://github.com/m-demare/hlargs.nvim"
+    },
     "indent-blankline.nvim": {
       "rev": "005b560",
       "src": "https://github.com/lukas-reineke/indent-blankline.nvim"
