@@ -8,14 +8,10 @@ vim.pack.add({
     {
         src = "https://github.com/nvim-mini/mini.cursorword",
     },
-    {
-        src = "https://github.com/nvim-mini/mini.surround",
-    },
 }, {
     load = true,
 })
 
 require("mini.ai").setup()
 require("mini.pairs").setup()
-require("mini.surround").setup()
 require("mini.cursorword").setup()

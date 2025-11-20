@@ -70,6 +70,21 @@ local blink_indent = {
     }
 }
 
+---@type lz.n.pack.Spec
+local comfy_lines = {
+    src = "https://github.com/mluders/comfy-line-numbers.nvim",
+    data = {
+        "comfy-line-numbers.nvim",
+        keys = {
+            { "<leader>tl", function() require("comfy-line-numbers").enable_line_numbers() end, mode = "n" },
+            { "<leader>tk", function() require("comfy-line-numbers").disable_line_numbers() end, mode = "n" }
+        },
+        after = function()
+            require("comfy-line-numbers").setup()
+        end,
+    }
+}
+
 
 loader.load_plugins(
     {
@@ -87,5 +102,8 @@ loader.load_plugins(
         },
         {
             plug = blink_indent,
+        },
+        {
+            plug = comfy_lines,
         }
     })

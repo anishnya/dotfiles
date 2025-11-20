@@ -32,6 +32,34 @@ local oil = {
 }
 
 ---@type lz.n.pack.Spec
+local fyler = {
+    src = "https://github.com/A7Lavinraj/fyler.nvim",
+    data = {
+        "fyler.nvim",
+        keys = {
+            { "<leader>=", function() require("fyler").open() end, desc = "Fyler" },
+        },
+        after = function()
+            require("fyler").setup(
+                {
+                    "fyler.nvim",
+                    keys = {
+                        { "<leader>=", function() require("fyler").open() end, desc = "Fyler" },
+                    },
+                    after = function()
+                        require("fyler").setup({
+                            integrations = {
+                                icon = "none"
+                            },
+                        }
+                        )
+                    end,
+                }
+            )
+        end,
+    }
+}
+---@type lz.n.pack.Spec
 local atone = {
     src = "https://github.com/XXiaoA/atone.nvim",
     data = {
@@ -134,6 +162,48 @@ local undo_highlight = {
     lazy = false,
 }
 
+---@type lz.n.pack.Spec
+local substitute = {
+    src = "https://github.com/gbprod/substitute.nvim",
+    data = {
+        "substitute.nvim",
+        after = function()
+            require("substitute").setup(
+                {
+                    on_substitute = require("yanky.integration").substitute()
+                }
+            )
+        end,
+        lazy = false,
+    }
+}
+
+---@type lz.n.pack.Spec
+local surround = {
+    src = "https://github.com/kylechui/nvim-surround",
+    data = {
+        "nvim-surround",
+        after = function()
+            require("nvim-surround").setup()
+        end,
+        lazy = false,
+    }
+}
+
+---@type lz.n.pack.Spec
+local plugin_view = {
+    src = "https://github.com/adriankarlen/plugin-view.nvim",
+    data = {
+        "plugin-view.nvim",
+        keys = {
+            { "<leader>y", function() require("plugin-view").open() end, desc = "Plugin View" },
+        },
+        after = function()
+            require("plugin-view").setup()
+        end,
+    }
+}
+
 loader.load_plugins(
     {
         {
@@ -155,6 +225,15 @@ loader.load_plugins(
             plug = yanky,
         },
         {
+            plug = substitute,
+        },
+        {
+            plug = surround,
+        },
+        {
             plug = undo_highlight,
+        },
+        {
+            plug = plugin_view,
         }
     })

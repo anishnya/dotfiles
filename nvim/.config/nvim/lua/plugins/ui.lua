@@ -92,6 +92,35 @@ local lualine = {
     }
 }
 
+---@type lz.n.pack.Spec
+local nui = {
+    src = "https://github.com/MunifTanjim/nui.nvim",
+    data = {
+        "nui.nvim",
+        lazy = false,
+    }
+}
+
+---@type lz.n.pack.Spec
+local notify = {
+    src = "https://github.com/rcarriga/nvim-notify",
+    data = {
+        "nvim-notify",
+        lazy = false,
+    }
+}
+
+---@type lz.n.pack.Spec
+local noice = {
+    src = "https://github.com/folke/noice.nvim",
+    data = {
+        "noice.nvim",
+        after = function()
+            require("noice").setup()
+        end,
+        lazy = false,
+    }
+}
 loader.load_plugins({
     {
         plug = color_scheme,

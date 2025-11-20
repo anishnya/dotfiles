@@ -41,7 +41,7 @@
       "src": "https://github.com/xzbdmw/colorful-menu.nvim"
     },
     "comfy-line-numbers.nvim": {
-      "rev": "31e2f92",
+      "rev": "3c51fa4",
       "src": "https://github.com/mluders/comfy-line-numbers.nvim"
     },
     "copilot.lua": {
@@ -68,12 +68,16 @@
       "rev": "572f566",
       "src": "https://github.com/rafamadriz/friendly-snippets"
     },
+    "fyler.nvim": {
+      "rev": "fd89f75",
+      "src": "https://github.com/A7Lavinraj/fyler.nvim"
+    },
     "fzf-lua": {
       "rev": "fcbf0cd",
       "src": "https://github.com/ibhagwan/fzf-lua"
     },
     "gitsigns.nvim": {
-      "rev": "1ee5c1f",
+      "rev": "cdafc32",
       "src": "https://github.com/lewis6991/gitsigns.nvim"
     },
     "highlight-undo.nvim": {
@@ -136,6 +140,14 @@
       "rev": "444e155",
       "src": "https://github.com/nvim-mini/mini.surround"
     },
+    "noice.nvim": {
+      "rev": "7bfd942",
+      "src": "https://github.com/folke/noice.nvim"
+    },
+    "nui.nvim": {
+      "rev": "de74099",
+      "src": "https://github.com/MunifTanjim/nui.nvim"
+    },
     "nvim-colorizer.lua": {
       "rev": "51cf7c9",
       "src": "https://github.com/catgoose/nvim-colorizer.lua"
@@ -143,6 +155,14 @@
     "nvim-lspconfig": {
       "rev": "ac98db2",
       "src": "https://github.com/neovim/nvim-lspconfig"
+    },
+    "nvim-notify": {
+      "rev": "8701bec",
+      "src": "https://github.com/rcarriga/nvim-notify"
+    },
+    "nvim-surround": {
+      "rev": "fcfa7e0",
+      "src": "https://github.com/kylechui/nvim-surround"
     },
     "nvim-treesitter": {
       "rev": "42fc28ba",
@@ -173,12 +193,16 @@
       "src": "https://github.com/benomahony/oil-git.nvim"
     },
     "oil.nvim": {
-      "rev": "7194872",
+      "rev": "7e1cd77",
       "src": "https://github.com/stevearc/oil.nvim"
     },
     "plenary": {
       "rev": "b9fd522",
       "src": "https://github.com/nvim-lua/plenary.nvim"
+    },
+    "plugin-view.nvim": {
+      "rev": "369c80a",
+      "src": "https://github.com/adriankarlen/plugin-view.nvim"
     },
     "precognition.nvim": {
       "rev": "2aae268",
@@ -201,8 +225,12 @@
       "src": "https://github.com/sphamba/smear-cursor.nvim"
     },
     "snacks.nvim": {
-      "rev": "64179b9",
+      "rev": "fe7cfe9",
       "src": "https://github.com/folke/snacks.nvim"
+    },
+    "substitute.nvim": {
+      "rev": "9db749a",
+      "src": "https://github.com/gbprod/substitute.nvim"
     },
     "tabout.nvim": {
       "rev": "9a34994",

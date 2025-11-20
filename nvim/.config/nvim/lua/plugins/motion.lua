@@ -27,11 +27,9 @@ local matchup = {
     }
 }
 
+
 loader.load_plugins(
     {
-        {
-            plug = treewalker,
-        },
         {
             plug = matchup,
         },

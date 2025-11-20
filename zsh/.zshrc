@@ -41,6 +41,7 @@ export EDITOR="$VISUAL"
 eval "$(zoxide init zsh)"
 alias bat='batcat'
 alias ls='eza'
+alias cd='z'
 
 # Quick navigation
 alias ..='z ..'
@@ -58,4 +59,4 @@ bindkey "^[[A" up-line-or-history
 bindkey "^[[B" down-line-or-history
 
 # fzf binds
-source <(fzf --zsh)
+# source <(fzf --zsh)
