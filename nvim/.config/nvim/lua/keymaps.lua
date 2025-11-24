@@ -3,18 +3,13 @@ local keymap = vim.keymap
 local opts = { noremap = true, silent = true }
 
 -- Split window
-keymap.set("n", "ss", ":split<Return>", opts)
-keymap.set("n", "sv", ":vsplit<Return>", opts)
+keymap.set("n", "<leader>ss", ":split<Return>", opts)
+keymap.set("n", "<leader>sv", ":vsplit<Return>", opts)
 
 -- Undo Tree
 keymap.set("n", "<leader>ut", "<cmd>Atone toggle<CR>", { noremap = true, silent = true })
 keymap.set("n", "<leader>uf", "<cmd>Atone focus<CR>", { noremap = true, silent = true })
 
--- Substitute.nvim keymaps
-keymap.set("n", "s", require('substitute').operator, { noremap = true })
-keymap.set("n", "ss", require('substitute').line, { noremap = true })
-keymap.set("n", "S", require('substitute').eol, { noremap = true })
-keymap.set("x", "s", require('substitute').visual, { noremap = true })
 -- Buffers
 -- Cycle through buffers
 keymap.set("n", "[b", "<cmd>bprevious<cr>", { desc = "Previous Buffer" })

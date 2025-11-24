@@ -78,7 +78,31 @@ local snacks = {
         after = function()
             require("snacks").setup({
                 explorer = { enabled = true },
-                picker = { enabled = true },
+                picker = {
+                    enabled = true,
+                    layout = {
+                        reverse = true,
+                        layout = {
+                            box = "horizontal",
+                            backdrop = false,
+                            width = 0.8,
+                            height = 0.9,
+                            border = "none",
+                            {
+                                box = "vertical",
+                                { win = "list",  title = " Results ", title_pos = "center", border = true },
+                                { win = "input", height = 1,          border = true,        title = "{title} {live} {flags}", title_pos = "center" },
+                            },
+                            {
+                                win = "preview",
+                                title = "{preview:Preview}",
+                                width = 0.45,
+                                border = true,
+                                title_pos = "center",
+                            },
+                        },
+                    },
+                },
                 dim = { enabled = true },
                 input = { enabled = true },
                 dashboard = {
@@ -94,8 +118,6 @@ local snacks = {
                         { section = "header" },
                         {
                             pane = 2,
-                            section = "terminal",
-                            cmd = "colorscript -e square",
                             height = 5,
                             padding = 1,
                         },

@@ -32,33 +32,19 @@ local oil = {
 }
 
 ---@type lz.n.pack.Spec
-local fyler = {
-    src = "https://github.com/A7Lavinraj/fyler.nvim",
+local oil_git = {
+    src = "https://github.com/anishnya/oil-git.nvim",
     data = {
-        "fyler.nvim",
-        keys = {
-            { "<leader>=", function() require("fyler").open() end, desc = "Fyler" },
-        },
+        "oil-git.nvim",
         after = function()
-            require("fyler").setup(
-                {
-                    "fyler.nvim",
-                    keys = {
-                        { "<leader>=", function() require("fyler").open() end, desc = "Fyler" },
-                    },
-                    after = function()
-                        require("fyler").setup({
-                            integrations = {
-                                icon = "none"
-                            },
-                        }
-                        )
-                    end,
-                }
-            )
+            require("oil-git").setup({
+                untracked_cache = true,
+            })
         end,
-    }
+        lazy = false,
+    },
 }
+
 ---@type lz.n.pack.Spec
 local atone = {
     src = "https://github.com/XXiaoA/atone.nvim",
@@ -173,6 +159,11 @@ local substitute = {
                     on_substitute = require("yanky.integration").substitute()
                 }
             )
+            -- Substitute.nvim keymaps
+            vim.keymap.set("n", "s", require('substitute').operator, { noremap = true })
+            vim.keymap.set("n", "ss", require('substitute').line, { noremap = true })
+            vim.keymap.set("n", "S", require('substitute').eol, { noremap = true })
+            vim.keymap.set("x", "s", require('substitute').visual, { noremap = true })
         end,
         lazy = false,
     }
@@ -204,6 +195,28 @@ local plugin_view = {
     }
 }
 
+---@type lz.n.pack.Spec
+local aerial = {
+    src = "https://github.com/stevearc/aerial.nvim",
+    data = {
+        "aerial.nvim",
+        keys = {
+            { "<leader>a", function() require("aerial").toggle() end, desc = "Aerial Toggle" },
+        },
+        after = function()
+            require("aerial").setup({
+                backends = { "lsp", "treesitter", "markdown", "asciidoc", "man" },
+                on_attach = function(bufnr)
+                    -- Jump forwards/backwards with '{' and '}'
+                    vim.keymap.set("n", "{", "<cmd>AerialPrev<CR>", { buffer = bufnr })
+                    vim.keymap.set("n", "}", "<cmd>AerialNext<CR>", { buffer = bufnr })
+                end,
+            })
+        end,
+        lazy = false,
+    }
+}
+
 loader.load_plugins(
     {
         {
@@ -217,6 +230,12 @@ loader.load_plugins(
         },
         {
             plug = oil,
+        },
+        {
+            plug = oil_git,
+        },
+        {
+            plug = aerial,
         },
         {
             plug = which_key,

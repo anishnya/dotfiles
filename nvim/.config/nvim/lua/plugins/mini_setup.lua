@@ -14,4 +14,4 @@ vim.pack.add({
 
 require("mini.ai").setup()
 require("mini.pairs").setup()
-require("mini.cursorword").setup()
+-- require("mini.cursorword").setup()

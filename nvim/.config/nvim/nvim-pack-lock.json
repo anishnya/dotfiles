@@ -9,8 +9,12 @@
       "src": "https://github.com/aaronik/Treewalker.nvim"
     },
     "aerial.nvim": {
-      "rev": "5e687b5",
+      "rev": "3c42785",
       "src": "https://github.com/stevearc/aerial.nvim"
+    },
+    "arrow.nvim": {
+      "rev": "6e0f726",
+      "src": "https://github.com/otavioschwanck/arrow.nvim"
     },
     "atone.nvim": {
       "rev": "7a5ef04",
@@ -181,7 +185,7 @@
       "src": "https://github.com/nvim-treesitter/nvim-treesitter-textobjects"
     },
     "nvim-various-textobjs": {
-      "rev": "aede158",
+      "rev": "a1866be",
       "src": "https://github.com/chrisgrieser/nvim-various-textobjs"
     },
     "nvim-web-devicons": {
@@ -193,11 +197,11 @@
       "src": "https://github.com/refractalize/oil-git-status.nvim"
     },
     "oil-git.nvim": {
-      "rev": "d1f27a5",
-      "src": "https://github.com/benomahony/oil-git.nvim"
+      "rev": "ee5fdff",
+      "src": "file:///Users/anishnya/Documents/personal_code/oil-git.nvim"
     },
     "oil.nvim": {
-      "rev": "7e1cd77",
+      "rev": "01cb3a8",
       "src": "https://github.com/stevearc/oil.nvim"
     },
     "plenary": {
