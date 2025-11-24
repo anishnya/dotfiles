@@ -18,7 +18,6 @@ source "${ZINIT_HOME}/zinit.zsh"
 # Plugins
 zinit light jeffreytse/zsh-vi-mode
 zinit light zdharma-continuum/fast-syntax-highlighting
-zinit light zsh-users/zsh-completions
 zinit light marlonrichert/zsh-autocomplete 
 
 # Starship prompt
@@ -27,8 +26,44 @@ zinit ice as"command" from"gh-r" \
           atpull"%atclone" src"init.zsh"
 zinit light starship/starship
 
-zinit ice from"gl" make 
-zinit load dwt1/shell-color-scripts
+# Utilities
+zi ice from"gh-r" as"program"
+zi light junegunn/fzf
+
+zi ice from"gh-r" as"program"
+zi light oppiliappan/eva
+
+zi ice from"gh-r" as"program"
+zi light printfn/fend
+
+zi ice from"gh-r" as"program"
+zi light Wilfred/difftastic/
+
+zi ice from"gh-r" as"program"
+zi light dalance/procs
+
+zi ice from"gh-r" as"program"
+zi light YS-L/csvlens
+
+zi ice from"gh-r" as"program"
+zi light skim-rs/skim
+
+zi ice from"gh-r" as"program"
+zi light sharkdp/fd
+
+zi ice from"gh-r" as"program"
+zi light yamafaktory/jql
+
+zi ice from"gh-r" as"program"
+zi light sharkdp/bat
+
+# Oh my zsh plugins
+zinit snippet OMZP::screen
+zinit snippet OMZP::sudo
+zinit snippet OMZP::copybuffer
+zinit snippet OMZP::copyfile
+zinit snippet OMZP::copypath
+zinit snippet OMZP::fzf
 
 # Rust
 source $HOME/.cargo/env
@@ -39,7 +74,6 @@ export EDITOR="$VISUAL"
 
 # Other tools
 eval "$(zoxide init zsh)"
-alias bat='batcat'
 alias ls='eza'
 alias cd='z'
 
@@ -54,9 +88,3 @@ zls() {
   z "$@" && eza -lAh
 }
 
-# Avoid fzf conflict
-bindkey "^[[A" up-line-or-history
-bindkey "^[[B" down-line-or-history
-
-# fzf binds
-# source <(fzf --zsh)
