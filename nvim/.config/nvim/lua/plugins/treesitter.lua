@@ -4,7 +4,9 @@ local loader = require("utils.loader")
 local languages = require("utils.installed_langs")
 local languages_list = {}
 for _, lang in ipairs(languages) do
-    table.insert(languages_list, lang.language)
+    if lang.language then
+        table.insert(languages_list, lang.language)
+    end
 end
 
 

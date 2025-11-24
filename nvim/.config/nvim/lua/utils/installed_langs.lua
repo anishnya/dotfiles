@@ -32,4 +32,16 @@ return {
         language = "yaml",
         lsp = "yamlls",
     },
+    {
+        lsp = "html",
+    },
+    {
+        lsp = "cssls",
+    },
+    {
+        lsp = "ts_ls",
+    },
+    {
+        lsp = "tailwindcss",
+    },
 }
