@@ -18,7 +18,6 @@ source "${ZINIT_HOME}/zinit.zsh"
 # Plugins
 zinit light jeffreytse/zsh-vi-mode
 zinit light zdharma-continuum/fast-syntax-highlighting
-zinit light marlonrichert/zsh-autocomplete 
 
 # Starship prompt
 zinit ice as"command" from"gh-r" \
@@ -27,6 +26,9 @@ zinit ice as"command" from"gh-r" \
 zinit light starship/starship
 
 # Utilities
+zi ice from"gh-r" as"program"
+zi light ajeetdsouza/zoxide
+
 zi ice from"gh-r" as"program"
 zi light junegunn/fzf
 
@@ -41,9 +43,6 @@ zi light Wilfred/difftastic/
 
 zi ice from"gh-r" as"program"
 zi light dalance/procs
-
-zi ice from"gh-r" as"program"
-zi light YS-L/csvlens
 
 zi ice from"gh-r" as"program"
 zi light skim-rs/skim

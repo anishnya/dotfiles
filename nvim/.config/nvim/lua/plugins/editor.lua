@@ -12,18 +12,6 @@ local comment = {
 }
 
 ---@type lz.n.pack.Spec
-local precognition = {
-    src = "https://github.com/tris203/precognition.nvim",
-    data = {
-        command = "BufEnter",
-        "precognition.nvim",
-        after = function()
-            require("precognition").setup()
-        end,
-    }
-}
-
----@type lz.n.pack.Spec
 local inline_diag = {
     src = "https://github.com/rachartier/tiny-inline-diagnostic.nvim",
     data = {
@@ -72,7 +60,7 @@ local blink_indent = {
 
 ---@type lz.n.pack.Spec
 local comfy_lines = {
-    src = "https://github.com/mluders/comfy-line-numbers.nvim",
+    src = "https://github.com/anishnya/comfy-line-numbers.nvim",
     data = {
         "comfy-line-numbers.nvim",
         keys = {
@@ -80,7 +68,11 @@ local comfy_lines = {
             { "<leader>tk", function() require("comfy-line-numbers").disable_line_numbers() end, mode = "n" }
         },
         after = function()
-            require("comfy-line-numbers").setup()
+            require("comfy-line-numbers").setup(
+                {
+                    default_statuscolumn = '%=%s%=%{v:virtnum > 0 ? "" : v:lua.line_numbering(v:lnum, v:relnum)}',
+                }
+            )
         end,
     }
 }
@@ -96,9 +88,6 @@ loader.load_plugins(
         },
         {
             plug = inline_diag,
-        },
-        {
-            plug = precognition,
         },
         {
             plug = blink_indent,

@@ -87,6 +87,73 @@ local which_key = {
     }
 }
 
+---@type lz.n.pack.Spec
+local tiny_glimmer = {
+    src = "https://github.com/rachartier/tiny-glimmer.nvim",
+    data = {
+        "tiny-glimmer.nvim",
+        after = function()
+            require("tiny-glimmer").setup({
+                enabled = true,
+                disable_warnings = true,
+
+                autoreload = false,
+                refresh_interval_ms = 8,
+                text_change_batch_timeout_ms = 50,
+
+                -- Automatic keybinding overwrites
+                overwrite = {
+                    auto_map = true,
+
+                    -- Yank operation animation
+                    yank = {
+                        enabled = true,
+                    },
+
+                    -- Search navigation animation
+                    search = {
+                        enabled = true,
+                    },
+
+                    -- Paste operation animation
+                    paste = {
+                        enabled = true,
+                    },
+
+                    -- Undo operation animation
+                    undo = {
+                        enabled = true,
+                    },
+
+                    -- Redo operation animation
+                    redo = {
+                        enabled = true,
+                    },
+                },
+
+                -- Third-party plugin integrations
+                support = {
+                    substitute = {
+                        enabled = true,
+                    },
+                },
+
+                -- Special animation presets
+                presets = {
+                    pulsar = {
+                        enabled = false,
+                    },
+                },
+
+                hijack_ft_disabled = {
+                    "alpha",
+                    "snacks_dashboard",
+                },
+            })
+        end,
+    }
+}
+
 
 ---@type lz.n.pack.Spec
 local yanky = {
@@ -99,16 +166,6 @@ local yanky = {
                 textobj = {
                     enabled = true,
                 },
-                highlight = {
-                    on_put = {
-                        higroup = "MySharedYankHighlight",
-                        timer = 500,
-                    },
-                    on_yank = {
-                        higroup = "MySharedYankHighlight",
-                        timer = 500,
-                    },
-                },
             })
 
             -- Temp keymaps here
@@ -119,10 +176,10 @@ local yanky = {
 
             vim.keymap.set("n", "<c-p>", "<Plug>(YankyPreviousEntry)")
             vim.keymap.set("n", "<c-n>", "<Plug>(YankyNextEntry)")
-            vim.keymap.set("n", "]p", "<Plug>(YankyPutIndentAfterLinewise)")
-            vim.keymap.set("n", "[p", "<Plug>(YankyPutIndentBeforeLinewise)")
-            vim.keymap.set("n", "]P", "<Plug>(YankyPutIndentAfterLinewise)")
-            vim.keymap.set("n", "[P", "<Plug>(YankyPutIndentBeforeLinewise)")
+            vim.keymap.set("n", "]p", "<Plug>(YankyPutAfterLinewise)")
+            vim.keymap.set("n", "[p", "<Plug>(YankyPutBeforeLinewise)")
+            vim.keymap.set("n", "]P", "<Plug>(YankyGPutAfterLinewise)")
+            vim.keymap.set("n", "[P", "<Plug>(YankyGPutBeforeLinewise)")
 
             vim.keymap.set("n", ">p", "<Plug>(YankyPutIndentAfterShiftRight)")
             vim.keymap.set("n", "<p", "<Plug>(YankyPutIndentAfterShiftLeft)")
@@ -135,19 +192,6 @@ local yanky = {
     }
 }
 
-
----@type lz.n.pack.Spec
-local undo_highlight = {
-    src = "https://github.com/tzachar/highlight-undo.nvim",
-    data = {
-        "highlight-undo.nvim",
-        after = function()
-            require("highlight-undo").setup({})
-        end,
-    },
-    lazy = false,
-}
-
 ---@type lz.n.pack.Spec
 local substitute = {
     src = "https://github.com/gbprod/substitute.nvim",
@@ -156,7 +200,10 @@ local substitute = {
         after = function()
             require("substitute").setup(
                 {
-                    on_substitute = require("yanky.integration").substitute()
+                    on_substitute = require("yanky.integration").substitute(),
+                    highlight_substituted_text = {
+                        enabled = false,
+                    },
                 }
             )
             -- Substitute.nvim keymaps
@@ -217,10 +264,40 @@ local aerial = {
     }
 }
 
+---@type lz.n.pack.Spec
+local plenary = {
+    src = "https://github.com/nvim-lua/plenary.nvim",
+    data = {
+        "plenary.nvim",
+        lazy = false,
+    }
+}
+
+---@type lz.n.pack.Spec
+local todo = {
+    src = "https://github.com/folke/todo-comments.nvim",
+    data = {
+        "todo-comments.nvim",
+        keys = {
+            { "<leader>st", function() Snacks.picker.todo_comments() end, desc = "Todo" },
+            { "<leader>sT", function () Snacks.picker.todo_comments({ keywords = { "TODO", "FIX", "FIXME" } }) end, desc = "Todo/Fix/Fixme" },
+        },
+        after = function()
+            require("todo-comments").setup()
+        end,
+    }
+}
+
 loader.load_plugins(
     {
         {
+            plug = plenary,
+        },
+        {
             plug = web_dev_icons,
+        },
+        {
+            plug = todo,
         },
         {
             plug = atone,
@@ -232,9 +309,6 @@ loader.load_plugins(
             plug = oil,
         },
         {
-            plug = oil_git,
-        },
-        {
             plug = aerial,
         },
         {
@@ -244,13 +318,13 @@ loader.load_plugins(
             plug = yanky,
         },
         {
+            plug = tiny_glimmer,
+        },
+        {
             plug = substitute,
         },
         {
             plug = surround,
-        },
-        {
-            plug = undo_highlight,
         },
         {
             plug = plugin_view,

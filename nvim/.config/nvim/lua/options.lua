@@ -17,7 +17,6 @@ opt.listchars = "tab: ,multispace:|   ,eol:󰌑"
 opt.list = true
 opt.number = true
 opt.relativenumber = true
-opt.numberwidth = 4
 opt.wrap = true
 opt.cursorline = true
 opt.scrolloff = 8
@@ -27,8 +26,23 @@ opt.undofile = true
 opt.winborder = "rounded"
 opt.hlsearch = false
 
+--- Relative line numbering
+function _G.line_numbering(lnum, relnum)
+    local result
+
+    if relnum == 0 then
+        result = string.format("%3d", lnum)
+    else
+        result = string.format("%3d", relnum)
+    end
+
+    return result .. ' '
+end
+
+opt.statuscolumn = '%=%s%=%{v:virtnum > 0 ? "" : v:lua.line_numbering(v:lnum, v:relnum)}'
+
 vim.cmd.filetype("plugin indent on")
-vim.cmd.colorscheme("tokyonight")
+vim.cmd.colorscheme("rose-pine")
 
 vim.g.netrw_liststyle = 1
 vim.g.netrw_sort_by = "size"

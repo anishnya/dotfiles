@@ -21,7 +21,7 @@
       "src": "https://github.com/XXiaoA/atone.nvim"
     },
     "blink": {
-      "rev": "5037cfa",
+      "rev": "f13226770b4947eb7e66befbeb53c3db39f13e25",
       "src": "https://github.com/Saghen/blink.cmp"
     },
     "blink-cmp-copilot": {
@@ -45,8 +45,8 @@
       "src": "https://github.com/xzbdmw/colorful-menu.nvim"
     },
     "comfy-line-numbers.nvim": {
-      "rev": "3c51fa4",
-      "src": "https://github.com/mluders/comfy-line-numbers.nvim"
+      "rev": "e93a65217fee2d53ab2c016f0f862178358bbfa4",
+      "src": "https://github.com/anishnya/comfy-line-numbers.nvim"
     },
     "copilot.lua": {
       "rev": "3123983",
@@ -67,6 +67,10 @@
     "eyeliner.nvim": {
       "rev": "8f197eb",
       "src": "https://github.com/jinh0/eyeliner.nvim"
+    },
+    "fidget.nvim": {
+      "rev": "e32b672d8fd343f9d6a76944fedb8c61d7d8111a",
+      "src": "https://github.com/j-hui/fidget.nvim"
     },
     "friendly-snippets": {
       "rev": "572f566",
@@ -148,6 +152,10 @@
       "rev": "444e155",
       "src": "https://github.com/nvim-mini/mini.surround"
     },
+    "neovim": {
+      "rev": "cf2a288696b03d0934da713d66c6d71557b5c997",
+      "src": "https://github.com/rose-pine/neovim"
+    },
     "noice.nvim": {
       "rev": "7bfd942",
       "src": "https://github.com/folke/noice.nvim"
@@ -197,8 +205,8 @@
       "src": "https://github.com/refractalize/oil-git-status.nvim"
     },
     "oil-git.nvim": {
-      "rev": "ee5fdff",
-      "src": "file:///Users/anishnya/Documents/personal_code/oil-git.nvim"
+      "rev": "ee5fdff2547febe7f5279c5bb17999486285ece8",
+      "src": "https://github.com/anishnya/oil-git.nvim"
     },
     "oil.nvim": {
       "rev": "01cb3a8",
@@ -206,6 +214,10 @@
     },
     "plenary": {
       "rev": "b9fd522",
+      "src": "https://github.com/nvim-lua/plenary.nvim"
+    },
+    "plenary.nvim": {
+      "rev": "b9fd5226c2f76c951fc8ed5923d85e4de065e509",
       "src": "https://github.com/nvim-lua/plenary.nvim"
     },
     "plugin-view.nvim": {
@@ -264,9 +276,17 @@
       "rev": "405a9af",
       "src": "https://github.com/Goose97/timber.nvim"
     },
+    "tiny-glimmer.nvim": {
+      "rev": "e83bab26665c2dd4153b8a24e172e674e7c6dee7",
+      "src": "https://github.com/rachartier/tiny-glimmer.nvim"
+    },
     "tiny-inline-diagnostic.nvim": {
       "rev": "994c13d",
       "src": "https://github.com/rachartier/tiny-inline-diagnostic.nvim"
+    },
+    "todo-comments.nvim": {
+      "rev": "31e3c38ce9b29781e4422fc0322eb0a21f4e8668",
+      "src": "https://github.com/folke/todo-comments.nvim"
     },
     "tokyonight": {
       "rev": "d14614c",

@@ -9,8 +9,6 @@ for _, lang in ipairs(languages) do
     end
 end
 
-
-
 local treesitter = {
     src = "https://github.com/nvim-treesitter/nvim-treesitter",
     data = {

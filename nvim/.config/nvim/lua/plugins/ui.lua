@@ -2,13 +2,13 @@ local loader = require("utils.loader")
 
 ---@type lz.n.pack.Spec
 local color_scheme = {
-    src = "https://github.com/folke/tokyonight.nvim",
+    src = "https://github.com/rose-pine/neovim",
     data = {
-        "tokyonight.nvim",
-        colorscheme = "tokyonight",
+        "neovim",
+        colorscheme = "rose-pine",
         after = function()
-            require("tokyonight").setup({
-                style = "night",
+            require("rose-pine").setup({
+                variant = "moon",
             })
         end,
     }
@@ -123,6 +123,18 @@ local noice = {
 }
 
 ---@type lz.n.pack.Spec
+local fidget = {
+    src = "https://github.com/j-hui/fidget.nvim",
+    data = {
+        "fidget.nvim",
+        after = function()
+            require("fidget").setup()
+        end,
+        lazy = false,
+    },
+}
+
+---@type lz.n.pack.Spec
 local hl_args = {
     src = "https://github.com/m-demare/hlargs.nvim",
     data = {
@@ -132,6 +144,7 @@ local hl_args = {
         end,
     }
 }
+
 loader.load_plugins({
     {
         plug = color_scheme,
@@ -153,5 +166,8 @@ loader.load_plugins({
     },
     {
         plug = hl_args,
+    },
+    {
+        plug = fidget,
     },
 })

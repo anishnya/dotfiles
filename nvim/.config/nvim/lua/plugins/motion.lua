@@ -1,17 +1,6 @@
 local loader = require("utils.loader")
 
 ---@type lz.n.pack.Spec
-local treewalker = {
-    src = "https://github.com/aaronik/Treewalker.nvim",
-    data = {
-        "Treewalker.nvim",
-        command = "Treewalker",
-        after = function()
-            require("treewalker").setup()
-        end,
-    }
-}
-
 local matchup = {
     src = "https://github.com/andymass/vim-matchup",
     data = {
@@ -27,6 +16,7 @@ local matchup = {
     }
 }
 
+---@type lz.n.pack.Spec
 local arrow = {
     src = "https://github.com/otavioschwanck/arrow.nvim",
     data = {

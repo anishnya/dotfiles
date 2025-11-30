@@ -36,5 +36,11 @@ require("blink.cmp").setup({
             window = { border = "single" },
         },
     },
-    fuzzy = { implementation = "prefer_rust" },
+    fuzzy = {
+        implementation = "prefer_rust",
+        prebuilt_binaries = {
+            download = true,
+            force_version = '1.8'
+        }
+    },
 })
