@@ -26,7 +26,7 @@ zinit ice as"command" from"gh-r" \
 zinit light starship/starship
 
 # Utilities
-zi ice from"gh-r" as"program"
+zi ice from"gh-r" as"program" id-as"z"
 zi light ajeetdsouza/zoxide
 
 zi ice from"gh-r" as"program"
@@ -47,7 +47,7 @@ zi light dalance/procs
 zi ice from"gh-r" as"program"
 zi light skim-rs/skim
 
-zi ice from"gh-r" as"program"
+zi ice from"gh-r" as"program" id-as"fd"
 zi light sharkdp/fd
 
 zi ice from"gh-r" as"program"

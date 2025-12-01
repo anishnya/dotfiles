@@ -45,11 +45,11 @@
       "src": "https://github.com/xzbdmw/colorful-menu.nvim"
     },
     "comfy-line-numbers.nvim": {
-      "rev": "e93a65217fee2d53ab2c016f0f862178358bbfa4",
+      "rev": "e93a652",
       "src": "https://github.com/anishnya/comfy-line-numbers.nvim"
     },
     "copilot.lua": {
-      "rev": "3123983",
+      "rev": "4383e05",
       "src": "https://github.com/zbirenbaum/copilot.lua"
     },
     "copilot.vim": {
@@ -228,6 +228,10 @@
       "rev": "2aae268",
       "src": "https://github.com/tris203/precognition.nvim"
     },
+    "quick-scope": {
+      "rev": "6cee1d9",
+      "src": "https://github.com/unblevable/quick-scope"
+    },
     "rainbow-delimiters.nvim": {
       "rev": "b6b3c9e",
       "src": "https://github.com/HiPhish/rainbow-delimiters.nvim"
@@ -237,7 +241,7 @@
       "src": "https://github.com/MeanderingProgrammer/render-markdown.nvim"
     },
     "smart-splits.nvim": {
-      "rev": "601cc64",
+      "rev": "e892a5d",
       "src": "https://github.com/mrjones2014/smart-splits.nvim"
     },
     "smear-cursor.nvim": {

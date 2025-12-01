@@ -15,19 +15,16 @@ local color_scheme = {
 }
 
 ---@type lz.n.pack.Spec
-local eye_liner = {
-    src = "https://github.com/jinh0/eyeliner.nvim",
+local quick_scope = {
+    src = "https://github.com/unblevable/quick-scope",
     data = {
-        "eyeliner.nvim",
+        "quick-scope",
         after = function()
-            require("eyeliner").setup({
-                highlight_on_key = true,
-                dim = true,
-                max_length = 9999,
-                disabled_filetypes = { "NvimTree" },
-                disabled_buftypes = { "nofile" },
-                default_keymaps = true,
-            })
+            vim.g.qs_highlight_on_keys = { "f", "F", "t", "T" }
+            vim.g.qs_enable = 0
+            vim.g.qs_lazy_highlight = 1
+
+            vim.keymap.set("n", "<leader>q", "<plug>(QuickScopeToggle)", { noremap = true, silent = true })
         end,
     }
 }
@@ -150,7 +147,7 @@ loader.load_plugins({
         plug = color_scheme,
     },
     {
-        plug = eye_liner,
+        plug = quick_scope,
     },
     {
         plug = smear_cursor,

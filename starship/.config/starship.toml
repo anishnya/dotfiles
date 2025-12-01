@@ -4,6 +4,7 @@ format = """
 [](color_orange)\
 $os\
 $username\
+$hostname\
 [](bg:color_yellow fg:color_orange)\
 $directory\
 [](fg:color_yellow bg:color_aqua)\
@@ -69,6 +70,13 @@ Debian = "󰣚"
 Redhat = "󱄛"
 RedHatEnterprise = "󱄛"
 Pop = ""
+
+[hostname]
+ssh_only = true
+style = "bg:color_orange fg:color_fg0"
+trim_at = '.'
+disabled = false
+format = '[@$hostname ]($style)'
 
 [username]
 show_always = true
