@@ -76,6 +76,9 @@ local lualine = {
         event = { "BufEnter" },
         after = function()
             require("lualine").setup({
+                options = {
+                    theme = "auto"
+                },
                 sections = {
                     lualine_c = {
                         {

@@ -59,6 +59,8 @@ local blink_indent = {
 }
 
 ---@type lz.n.pack.Spec
+-- local temp = "file:///Users/anishnya/Documents/personal_code/comfy-line-numbers.nvim"
+-- local src_git = "https://github.com/anishnya/comfy-line-numbers.nvim",
 local comfy_lines = {
     src = "https://github.com/anishnya/comfy-line-numbers.nvim",
     data = {

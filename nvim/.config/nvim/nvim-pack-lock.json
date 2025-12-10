@@ -33,7 +33,7 @@
       "src": "https://github.com/xzbdmw/colorful-menu.nvim"
     },
     "comfy-line-numbers.nvim": {
-      "rev": "e93a652",
+      "rev": "e93a65217fee2d53ab2c016f0f862178358bbfa4",
       "src": "https://github.com/anishnya/comfy-line-numbers.nvim"
     },
     "copilot.lua": {
@@ -87,6 +87,10 @@
     "mini.ai": {
       "rev": "11c5718",
       "src": "https://github.com/nvim-mini/mini.ai"
+    },
+    "mini.cmdline": {
+      "rev": "59a297e160f25a7b49a35182b200a5259db6a9b7",
+      "src": "https://github.com/nvim-mini/mini.cmdline"
     },
     "mini.pairs": {
       "rev": "b9aada8",
