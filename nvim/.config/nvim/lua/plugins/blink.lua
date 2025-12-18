@@ -1,9 +1,5 @@
 vim.pack.add({
     {
-        src = "https://github.com/rafamadriz/friendly-snippets",
-        name = "friendly-snippets",
-    },
-    {
         src = "https://github.com/Saghen/blink.cmp",
         name = "blink",
     },
@@ -27,6 +23,10 @@ require("blink.cmp").setup({
             },
         },
     },
+    keymap = {
+        ["<Tab>"] = { "snippet_forward", "fallback_to_mappings" },
+        ["<M-Tab>"] = { "snippet_backward", "fallback_to_mappings" },
+    },
     completion = {
         menu = { border = "single" },
         list = { selection = { preselect = true, auto_insert = true } },
@@ -43,4 +43,8 @@ require("blink.cmp").setup({
             force_version = '1.8'
         }
     },
+    snippets = {
+        preset = 'luasnip',
+    },
+    signature = { enabled = true },
 })

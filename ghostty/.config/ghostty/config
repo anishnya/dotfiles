@@ -3,7 +3,7 @@ shell-integration-features = true
 alpha-blending = native
 window-colorspace = display-p3
 theme = TokyoNight Night
-macos-option-as-alt = left
+macos-option-as-alt = true
 
 clipboard-read = allow
 clipboard-write = allow

@@ -66,7 +66,7 @@ local comfy_lines = {
     data = {
         "comfy-line-numbers.nvim",
         keys = {
-            { "<leader>tl", function() require("comfy-line-numbers").enable_line_numbers() end, mode = "n" },
+            { "<leader>tl", function() require("comfy-line-numbers").enable_line_numbers() end,  mode = "n" },
             { "<leader>tk", function() require("comfy-line-numbers").disable_line_numbers() end, mode = "n" }
         },
         after = function()
@@ -76,6 +76,34 @@ local comfy_lines = {
                 }
             )
         end,
+    }
+}
+
+local friendly_snippets = {
+    src = "https://github.com/rafamadriz/friendly-snippets",
+    data = {
+        "friendly-snippets",
+        lazy = false,
+    }
+}
+
+---@type lz.n.pack.Spec
+local lua_snips = {
+    src = "https://github.com/L3MON4D3/LuaSnip",
+    data = {
+        "LuaSnip",
+        before = function()
+            local pack_info = vim.pack.get({ "LuaSnip" })
+            local plug_path = pack_info[1].path
+            local command = "cd " .. plug_path .. " && make install_jsregexp"
+            vim.fn.system(command)
+        end,
+        after = function()
+            local ls = require("luasnip")
+            ls.setup({ enable_autosnippets = true })
+            require("luasnip.loaders.from_vscode").lazy_load()
+        end,
+        lazy = false,
     }
 }
 
@@ -96,5 +124,11 @@ loader.load_plugins(
         },
         {
             plug = comfy_lines,
+        },
+        {
+            plug = friendly_snippets,
+        },
+        {
+            plug = lua_snips,
         }
     })

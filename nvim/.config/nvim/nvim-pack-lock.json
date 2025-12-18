@@ -4,6 +4,10 @@
       "rev": "e30b7f2",
       "src": "https://github.com/numToStr/Comment.nvim"
     },
+    "LuaSnip": {
+      "rev": "3732756842a2f7e0e76a7b0487e9692072857277",
+      "src": "https://github.com/L3MON4D3/LuaSnip"
+    },
     "aerial.nvim": {
       "rev": "3c42785",
       "src": "https://github.com/stevearc/aerial.nvim"
@@ -33,7 +37,7 @@
       "src": "https://github.com/xzbdmw/colorful-menu.nvim"
     },
     "comfy-line-numbers.nvim": {
-      "rev": "e93a65217fee2d53ab2c016f0f862178358bbfa4",
+      "rev": "98173490a7d292487fa413dcc9208a84fdda5d57",
       "src": "https://github.com/anishnya/comfy-line-numbers.nvim"
     },
     "copilot.lua": {

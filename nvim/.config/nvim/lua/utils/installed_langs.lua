@@ -41,7 +41,7 @@ return {
     {
         lsp = "ts_ls",
     },
-    {
-        lsp = "tailwindcss",
-    },
+    -- {
+    --     lsp = "tailwindcss",
+    -- },
 }
