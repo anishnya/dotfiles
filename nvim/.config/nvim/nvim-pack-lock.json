@@ -108,21 +108,27 @@
       "rev": "51cf7c9",
       "src": "https://github.com/catgoose/nvim-colorizer.lua"
     },
+    "nvim-origami": {
+      "rev": "e33d5cac5a3097f77a087274948c13736f25d2f8",
+      "src": "https://github.com/chrisgrieser/nvim-origami"
+    },
     "nvim-surround": {
       "rev": "fcfa7e0",
       "src": "https://github.com/kylechui/nvim-surround"
     },
     "nvim-treesitter": {
-      "rev": "42fc28ba",
-      "src": "https://github.com/nvim-treesitter/nvim-treesitter"
+      "rev": "8cdffc6d334731ce3703b6d870a5a34fd878208a",
+      "src": "https://github.com/nvim-treesitter/nvim-treesitter",
+      "version": "'main'"
     },
     "nvim-treesitter-context": {
       "rev": "41847d3",
       "src": "https://github.com/nvim-treesitter/nvim-treesitter-context"
     },
     "nvim-treesitter-textobjects": {
-      "rev": "71385f1",
-      "src": "https://github.com/nvim-treesitter/nvim-treesitter-textobjects"
+      "rev": "e91c585ac0ee760198dabc1fad2e6227effdcd5e",
+      "src": "https://github.com/nvim-treesitter/nvim-treesitter-textobjects",
+      "version": "'main'"
     },
     "nvim-various-textobjs": {
       "rev": "a1866be",
@@ -175,6 +181,10 @@
     "todo-comments.nvim": {
       "rev": "31e3c38ce9b29781e4422fc0322eb0a21f4e8668",
       "src": "https://github.com/folke/todo-comments.nvim"
+    },
+    "treesitter-modules.nvim": {
+      "rev": "dcb5030422732af54631083316887e512e4a79a3",
+      "src": "https://github.com/MeanderingProgrammer/treesitter-modules.nvim"
     },
     "vim-matchup": {
       "rev": "1c276e1",

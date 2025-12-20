@@ -2,6 +2,7 @@
 vim.g.mapleader = " "
 vim.env.path = vim.env.VIM_PATH or vim.env.PATH
 vim.g.format_on_save = false
+vim.g.no_plugin_maps = true
 
 require("plugins")
 require("keymaps")

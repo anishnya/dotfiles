@@ -18,7 +18,8 @@ local function add_plugin(spec)
     vim.pack.add(
         {
             {
-                src = spec.src
+                src = spec.src,
+                version = spec.version,
             },
         },
         {

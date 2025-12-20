@@ -11,90 +11,28 @@ end
 
 local treesitter = {
     src = "https://github.com/nvim-treesitter/nvim-treesitter",
+    version = "main",
     data = {
         "nvim-treesitter",
         after = function()
-            require("nvim-treesitter.configs").setup(
-                {
-                    -- A list of parser names, or "all" (the five listed parsers should always be installed)
-                    ensure_installed = languages_list,
-                    sync_install = false,
-                    auto_install = true,
-                    ignore_install = {},
-                    highlight = {
-                        enable = true,
-                    },
-                    indent = {
-                        enable = true
-                    },
-                    -- Tree Sitter Textobjects
-                    textobjects = {
-                        select = {
-                            enable = true,
+            vim.cmd([[TSUpdate]])
+        end,
+        lazy = false
+    }
+}
 
-                            -- Automatically jump forward to textobj, similar to targets.vim
-                            lookahead = true,
-
-                            keymaps = {
-                                -- Functions
-                                ["af"] = { query = "@function.outer", desc = "Outer Function" },
-                                ["if"] = { query = "@function.inner", desc = "Inner Function" },
-
-                                -- Conditions
-                                ["ac"] = { query = "@conditional.outer", desc = "Outer Conditional" },
-                                ["ic"] = { query = "@conditional.inner", desc = "Inner Conditional" },
-
-                                -- Loops
-                                ["al"] = { query = "@loop.outer", desc = "Outer Loop" },
-                                ["il"] = { query = "@loop.inner", desc = "Inner Loop" },
-
-                                -- Assignments
-                                ["aag"] = { query = "@assignment.outer", desc = "Outer Assignment" },
-                                ["iag"] = { query = "@assignment.inner", desc = "Inner Assignment" },
-
-                                ["aal"] = { query = "@assignment.lhs", desc = "LHS Assignment" },
-                                ["aar"] = { query = "@assignment.rhs", desc = "RHS Assignment" },
-
-                                -- Calls
-                                ["ak"] = { query = "@call.outer", desc = "Outer Call" },
-                                ["ik"] = { query = "@call.inner", desc = "Inner Call" },
-
-                                -- Parameters
-                                ["ap"] = { query = "@parameter.outer", desc = "Outer Parameter" },
-                                ["ip"] = { query = "@parameter.inner", desc = "Inner Parameter" },
-
-                            },
-                            include_surrounding_whitespace = true,
-                        },
-                    },
-                    move = {
-                        enable = true,
-                        set_jumps = true,
-                        goto_next_start = {
-                            ["]m"] = "@function.outer",
-                            ["]o"] = "@loop.*",
-                        },
-                        goto_next_end = {
-                            ["]M"] = "@function.outer",
-                            ["]["] = "@class.outer",
-                        },
-                        goto_previous_start = {
-                            ["[m"] = "@function.outer",
-                            ["[["] = "@class.outer",
-                        },
-                        goto_previous_end = {
-                            ["[M"] = "@function.outer",
-                            ["[]"] = "@class.outer",
-                        },
-                        goto_next = {
-                            ["]d"] = "@conditional.outer",
-                        },
-                        goto_previous = {
-                            ["[d"] = "@conditional.outer",
-                        }
-                    },
-                }
-            )
+local treesitter_modules = {
+    src = "https://github.com/MeanderingProgrammer/treesitter-modules.nvim",
+    data = {
+        "treesitter-modules.nvim",
+        after = function()
+            require("treesitter-modules").setup({
+                ensure_installed = languages_list,
+                fold = { enable = true },
+                highlight = { enable = true },
+                indent = { enable = true },
+                incremental_selection = { enable = true },
+            })
         end,
         lazy = false
     }
@@ -102,8 +40,67 @@ local treesitter = {
 
 local treesitter_text_objs = {
     src = "https://github.com/nvim-treesitter/nvim-treesitter-textobjects",
+    version = "main",
     data = {
         "nvim-treesitter-textobjects",
+        after = function()
+            require("nvim-treesitter-textobjects").setup ({
+                select = {
+                    lookahead = true,
+                    include_surrounding_whitespace = false,
+                },
+                move = {
+                    set_jumps = true,
+                },
+            })
+
+            -- Keymaps
+            -- Functions
+            vim.keymap.set({ "x", "o" }, "am", function()
+                require "nvim-treesitter-textobjects.select".select_textobject("@function.outer", "textobjects")
+            end)
+            vim.keymap.set({ "x", "o" }, "im", function()
+                require "nvim-treesitter-textobjects.select".select_textobject("@function.inner", "textobjects")
+            end)
+
+            vim.keymap.set({ "n", "x", "o" }, "]m", function()
+                require("nvim-treesitter-textobjects.move").goto_next_start("@function.outer", "textobjects")
+            end)
+            vim.keymap.set({ "n", "x", "o" }, "[m", function()
+                require("nvim-treesitter-textobjects.move").goto_previous_start("@function.outer", "textobjects")
+            end)
+
+            vim.keymap.set({ "n", "x", "o" }, "]M", function()
+                require("nvim-treesitter-textobjects.move").goto_next_end("@function.outer", "textobjects")
+            end)
+            vim.keymap.set({ "n", "x", "o" }, "[M", function()
+                require("nvim-treesitter-textobjects.move").goto_previous_end("@function.outer", "textobjects")
+            end)
+
+            -- Loops
+            vim.keymap.set({ "x", "o" }, "al", function()
+                require "nvim-treesitter-textobjects.select".select_textobject("@loop.outer", "textobjects")
+            end)
+            vim.keymap.set({ "x", "o" }, "il", function()
+                require "nvim-treesitter-textobjects.select".select_textobject("@loop.inner", "textobjects")
+            end)
+
+            -- Conditionals
+            vim.keymap.set({ "x", "o" }, "ac", function()
+                require "nvim-treesitter-textobjects.select".select_textobject("@conditional.outer", "textobjects")
+            end)
+            vim.keymap.set({ "x", "o" }, "ic", function()
+                require "nvim-treesitter-textobjects.select".select_textobject("@conditional.inner", "textobjects")
+            end)
+
+            -- Comments
+            vim.keymap.set({ "x", "o" }, "at", function()
+                require "nvim-treesitter-textobjects.select".select_textobject("@comment.outer", "textobjects")
+            end)
+            vim.keymap.set({ "x", "o" }, "it", function()
+                require "nvim-treesitter-textobjects.select".select_textobject("@comment.inner", "textobjects")
+            end)
+        end,
         lazy = false
     }
 }
@@ -126,7 +123,7 @@ local treesitter_various = {
         after = function()
             require("various-textobjs").setup({
                 keymaps = {
-                    useDefaults = true
+                    useDefaults = true,
                 }
             })
         end,
@@ -139,6 +136,9 @@ loader.load_plugins(
     {
         {
             plug = treesitter,
+        },
+        {
+            plug = treesitter_modules,
         },
         {
             plug = treesitter_text_objs,

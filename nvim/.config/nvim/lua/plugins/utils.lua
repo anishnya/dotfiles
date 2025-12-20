@@ -94,6 +94,39 @@ local web_dev_icons = {
 }
 
 ---@type lz.n.pack.Spec
+local origami = {
+    src = "https://github.com/chrisgrieser/nvim-origami",
+    data = {
+        "nvim-origami",
+        after = function()
+            require("origami").setup({
+                useLspFoldsWithTreesitterFallback = true,
+                pauseFoldsOnSearch = true,
+                foldtext = {
+                    enabled = true,
+                    padding = 3,
+                    lineCount = {
+                        template = "%d lines", -- `%d` is replaced with the number of folded lines
+                        hlgroup = "Comment",
+                    },
+                    diagnosticsCount = true, -- uses hlgroups and icons from `vim.diagnostic.config().signs`
+                    gitsignsCount = true, -- requires `gitsigns.nvim`
+                    disableOnFt = { "snacks_picker_input" }, ---@type string[]
+                },
+                autoFold = {
+                    enabled = true,
+                    kinds = { "comment", "imports" }, ---@type lsp.FoldingRangeKind[]
+                },
+                foldKeymaps = {
+                    setup = false, -- modifies `h`, `l`, `^`, and `$`
+                },
+            } )
+        end,
+        lazy = false,
+    }
+}
+
+---@type lz.n.pack.Spec
 local which_key = {
     src = "https://github.com/folke/which-key.nvim",
     data = {
@@ -102,6 +135,7 @@ local which_key = {
         after = function()
             require("which-key").setup()
         end,
+        lazy = false,
     }
 }
 
@@ -347,5 +381,9 @@ loader.load_plugins(
         },
         {
             plug = plugin_view,
+        },
+        {
+            plug = origami,
         }
-    })
+    }
+)

@@ -26,6 +26,9 @@ opt.undofile = true
 opt.winborder = "rounded"
 opt.hlsearch = false
 
+opt.foldlevel = 99
+opt.foldlevelstart = 99
+
 --- Relative line numbering
 function _G.line_numbering(lnum, relnum)
     local result
@@ -45,14 +48,13 @@ function _G.abs_line_numbering(lnum, relnum)
     local result
 
     if relnum == 0 then
-        result = "" 
+        result = ""
     else
         result = string.format("%3d", lnum)
     end
 
     return result .. ' '
 end
-
 
 opt.statuscolumn = '%=%s%=%{v:virtnum > 0 ? "" : v:lua.line_numbering(v:lnum, v:relnum)}'
 
