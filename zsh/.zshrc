@@ -53,6 +53,18 @@ zi light yamafaktory/jql
 zi ice from"gh-r" as"program"
 zi light sharkdp/bat
 
+zi ice as"program" from"gh-r" \
+    atclone'
+        local os arch
+        [[ "$OSTYPE" == "darwin"* ]] && os="darwin" || os="linux"
+        [[ "$(uname -m)" == "x86_64" ]] && arch="amd64" || arch="arm64"
+        # Find the file matching our system and link it to "bazel"
+        ln -sf bazelisk-${os}-${arch} bazel
+    ' \
+    atpull'%atclone' \
+    pick"bazel" 
+zi load bazelbuild/bazelisk
+
 # Oh my zsh plugins
 zinit snippet OMZP::screen
 zinit snippet OMZP::sudo
