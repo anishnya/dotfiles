@@ -12,4 +12,4 @@ vim.pack.add({
     load = true,
 })
 
-require("mini.pairs").setup()
+-- require("mini.pairs").setup()

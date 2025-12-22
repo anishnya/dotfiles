@@ -131,7 +131,6 @@ local which_key = {
     src = "https://github.com/folke/which-key.nvim",
     data = {
         "which-key.nvim",
-        event = "VimEnter",
         after = function()
             require("which-key").setup()
         end,

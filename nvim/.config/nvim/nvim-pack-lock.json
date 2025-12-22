@@ -112,6 +112,10 @@
       "rev": "cf2a288696b03d0934da713d66c6d71557b5c997",
       "src": "https://github.com/rose-pine/neovim"
     },
+    "nvim-autopairs": {
+      "rev": "c2a0dd0d931d0fb07665e1fedb1ea688da3b80b4",
+      "src": "https://github.com/windwp/nvim-autopairs"
+    },
     "nvim-colorizer.lua": {
       "rev": "51cf7c9",
       "src": "https://github.com/catgoose/nvim-colorizer.lua"

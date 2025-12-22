@@ -108,6 +108,17 @@ local lua_snips = {
     }
 }
 
+---@type lz.n.pack.Spec
+local autopairs = {
+    src = "https://github.com/windwp/nvim-autopairs",
+    data = {
+        "nvim-autopairs",
+        after = function()
+            require("nvim-autopairs").setup()
+        end,
+        lazy = false,
+    }
+}
 
 loader.load_plugins(
     {
@@ -131,5 +142,8 @@ loader.load_plugins(
         },
         {
             plug = lua_snips,
+        },
+        {
+            plug = autopairs,
         }
     })

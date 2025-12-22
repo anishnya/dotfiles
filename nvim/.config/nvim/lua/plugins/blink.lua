@@ -12,7 +12,6 @@ vim.pack.add({
     load = true,
 })
 
--- TODO: epp
 require("blink.cmp").setup({
     sources = {
         default = { "lsp", "path", "snippets", "buffer", "copilot" },
@@ -34,8 +33,18 @@ require("blink.cmp").setup({
         ['<C-k>'] = { 'show_signature', 'hide_signature', "fallback_to_mappings" },
     },
     completion = {
+        accept = {
+            auto_brackets = {
+                enabled = true,
+            }
+        },
         menu = { border = "single" },
-        list = { selection = { preselect = true, auto_insert = true } },
+        list = {
+            selection = {
+                preselect = true,
+                auto_insert = true
+            }
+        },
         documentation = {
             auto_show = true,
             auto_show_delay_ms = 100,

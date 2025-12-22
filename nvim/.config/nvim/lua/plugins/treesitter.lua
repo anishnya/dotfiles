@@ -119,10 +119,10 @@ local treesitter_text_objs = {
                 require "nvim-treesitter-textobjects.select".select_textobject("@parameter.inner", "textobjects")
             end)
             vim.keymap.set({ "n", "x", "o" }, "]r", function()
-                require("nvim-treesitter-textobjects.move").goto_next("@parameter.inner", "textobjects")
+                require("nvim-treesitter-textobjects.move").goto_next_start("@parameter.outer", "textobjects")
             end)
             vim.keymap.set({ "n", "x", "o" }, "[r", function()
-                require("nvim-treesitter-textobjects.move").goto_previous("@parameter.inner", "textobjects")
+                require("nvim-treesitter-textobjects.move").goto_previous_start("@parameter.outer", "textobjects")
             end)
 
             -- Folds
