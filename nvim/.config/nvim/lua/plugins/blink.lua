@@ -7,10 +7,12 @@ vim.pack.add({
         src = "https://github.com/fang2hou/blink-copilot",
         name = "blink-copilot",
     },
+
 }, {
     load = true,
 })
 
+-- TODO: epp
 require("blink.cmp").setup({
     sources = {
         default = { "lsp", "path", "snippets", "buffer", "copilot" },
@@ -26,6 +28,10 @@ require("blink.cmp").setup({
     keymap = {
         ["<Tab>"] = { "snippet_forward", "fallback_to_mappings" },
         ["<M-Tab>"] = { "snippet_backward", "fallback_to_mappings" },
+
+        ['<C-u>'] = { 'scroll_signature_up', 'fallback' },
+        ['<C-d>'] = { 'scroll_signature_down', 'fallback' },
+        ['<C-k>'] = { 'show_signature', 'hide_signature', "fallback_to_mappings" },
     },
     completion = {
         menu = { border = "single" },
@@ -45,6 +51,10 @@ require("blink.cmp").setup({
     },
     snippets = {
         preset = 'luasnip',
+    },
+    cmdline = {
+        keymap = { preset = 'inherit' },
+        completion = { menu = { auto_show = true } },
     },
     signature = { enabled = true },
 })

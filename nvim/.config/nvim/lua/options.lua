@@ -26,9 +26,6 @@ opt.undofile = true
 opt.winborder = "rounded"
 opt.hlsearch = false
 
-opt.foldlevel = 99
-opt.foldlevelstart = 99
-
 --- Relative line numbering
 function _G.line_numbering(lnum, relnum)
     local result
@@ -59,7 +56,6 @@ end
 opt.statuscolumn = '%=%s%=%{v:virtnum > 0 ? "" : v:lua.line_numbering(v:lnum, v:relnum)}'
 
 vim.cmd.filetype("plugin indent on")
-vim.cmd.colorscheme("rose-pine")
 
 vim.g.netrw_liststyle = 1
 vim.g.netrw_sort_by = "size"

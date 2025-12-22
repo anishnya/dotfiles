@@ -1,10 +1,5 @@
 -- Non plugin specific keymaps
 local keymap = vim.keymap
-local opts = { noremap = true, silent = true }
-
--- Split window
-keymap.set("n", "<leader>ss", ":split<Return>", opts)
-keymap.set("n", "<leader>sv", ":vsplit<Return>", opts)
 
 -- Undo Tree
 keymap.set("n", "<leader>ut", "<cmd>Atone toggle<CR>", { noremap = true, silent = true })

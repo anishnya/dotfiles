@@ -5,13 +5,16 @@ local color_scheme = {
     src = "https://github.com/rose-pine/neovim",
     data = {
         "neovim",
-        colorscheme = "rose-pine",
         after = function()
             require("rose-pine").setup({
                 variant = "moon",
             })
+
+            vim.cmd.colorscheme("rose-pine")
         end,
+        lazy = false,
     }
+
 }
 
 ---@type lz.n.pack.Spec
@@ -73,7 +76,6 @@ local lualine = {
     src = "https://github.com/nvim-lualine/lualine.nvim",
     data = {
         "lualine.nvim",
-        event = { "BufEnter" },
         after = function()
             require("lualine").setup({
                 options = {
@@ -89,34 +91,33 @@ local lualine = {
                 },
             })
         end,
-    }
-}
-
----@type lz.n.pack.Spec
-local nui = {
-    src = "https://github.com/MunifTanjim/nui.nvim",
-    data = {
-        "nui.nvim",
         lazy = false,
     }
 }
 
 ---@type lz.n.pack.Spec
-local notify = {
-    src = "https://github.com/rcarriga/nvim-notify",
+local modicator = {
+    src = "https://github.com/mawkler/modicator.nvim",
     data = {
-        "nvim-notify",
-        lazy = false,
-    }
-}
-
----@type lz.n.pack.Spec
-local noice = {
-    src = "https://github.com/folke/noice.nvim",
-    data = {
-        "noice.nvim",
+        "modicator.nvim",
         after = function()
-            require("noice").setup()
+            require('modicator').setup({
+                show_warnings = false,
+                highlights = {
+                    defaults = {
+                        bold = true,
+                        italic = false,
+                    },
+                    use_cursorline_background = true,
+                },
+                integration = {
+                    lualine = {
+                        enabled = true,
+                        mode_section = "a",
+                        highlight = 'bg',
+                    },
+                },
+            })
         end,
         lazy = false,
     }
@@ -169,5 +170,8 @@ loader.load_plugins({
     },
     {
         plug = fidget,
+    },
+    {
+        plug = modicator,
     },
 })

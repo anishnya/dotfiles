@@ -79,6 +79,7 @@ local comfy_lines = {
     }
 }
 
+---@type lz.n.pack.Spec
 local friendly_snippets = {
     src = "https://github.com/rafamadriz/friendly-snippets",
     data = {

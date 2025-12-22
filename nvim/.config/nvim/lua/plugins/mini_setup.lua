@@ -12,6 +12,4 @@ vim.pack.add({
     load = true,
 })
 
--- require("mini.ai").setup()
 require("mini.pairs").setup()
-require("mini.cmdline").setup()

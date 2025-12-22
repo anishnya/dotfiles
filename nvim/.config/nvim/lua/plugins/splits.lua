@@ -19,7 +19,68 @@ local splits = {
             { "<leader><leader>l", function() require("smart-splits").swap_buf_right() end },
         },
         after = function()
-            require('smart-splits').setup()
+            require('smart-splits').setup(
+                {
+                    move_cursor_same_row = true,
+                    cursor_follows_swapped_bufs = true,
+                }
+            )
+        end
+    }
+}
+
+local focus = {
+    src = "https://github.com/nvim-focus/focus.nvim",
+    data = {
+        "focus.nvim",
+        keys = {
+            { "<leader>wh", function() require("focus").split_command("h") end, desc = "Split Left" },
+            { "<leader>wj", function() require("focus").split_command("j") end, desc = "Split Up" },
+            { "<leader>wk", function() require("focus").split_command("k") end, desc = "Split Down" },
+            { "<leader>wl", function() require("focus").split_command("l") end, desc = "Split Right" },
+            { "<leader>wn", function() require("focus").split_nicely() end,     desc = "Split Evenly" },
+            { "<leader>ss", function() require("focus").split_command("j") end,     desc = "Split Horiztonal" },
+            { "<leader>sv", function() require("focus").split_command("l") end,     desc = "Split Vertical" },
+        },
+        after = function()
+            require("focus").setup({
+                enable = true,
+                commands = true,
+                autoresize = {
+                    enable = true,
+                    width = 0,
+                    height = 0,
+                    minwidth = 0,
+                    minheight = 0,
+                    focusedwindow_minwidth = 0,
+                    focusedwindow_minheight = 0,
+                    height_quickfix = 10,
+                },
+                split = {
+                    bufnew = true,
+                },
+                ui = {
+                    number = false,
+                    relativenumber = false,
+                    hybridnumber = false,
+                    absolutenumber_unfocussed = false,
+
+                    cursorline = false,
+                    cursorcolumn = false,
+                    colorcolumn = {
+                        enable = false,
+                        list = '+1',
+                    },
+                    signcolumn = false,
+                    winhighlight = true,
+                }
+            })
+
+            -- Regular Keymaps
+            vim.keymap.set("n", "<leader>we", "<cmd>:FocusEqualise<CR>")
+            vim.keymap.set("n", "<leader>wm", "<cmd>:FocusMaximise<CR>")
+            vim.keymap.set("n", "<leader>wq", "<cmd>:FocusMaxOrEqual<CR>")
+            vim.keymap.set("n", "<leader>wt", "<cmd>:FocusToggle<CR>")
         end
     }
 }
@@ -28,6 +89,9 @@ loader.load_plugins(
     {
         {
             plug = splits,
+        },
+        {
+            plug = focus,
         },
     }
 )

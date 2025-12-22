@@ -56,6 +56,10 @@
       "rev": "e32b672d8fd343f9d6a76944fedb8c61d7d8111a",
       "src": "https://github.com/j-hui/fidget.nvim"
     },
+    "focus.nvim": {
+      "rev": "26a755c363284547196ceb258a83f92608d7979b",
+      "src": "https://github.com/nvim-focus/focus.nvim"
+    },
     "friendly-snippets": {
       "rev": "572f566",
       "src": "https://github.com/rafamadriz/friendly-snippets"
@@ -99,6 +103,10 @@
     "mini.pairs": {
       "rev": "b9aada8",
       "src": "https://github.com/nvim-mini/mini.pairs"
+    },
+    "modicator.nvim": {
+      "rev": "0bc989b32a7ba3cab06cb79a433557384eb2a0be",
+      "src": "https://github.com/mawkler/modicator.nvim"
     },
     "neovim": {
       "rev": "cf2a288696b03d0934da713d66c6d71557b5c997",
@@ -170,6 +178,10 @@
       "rev": "9db749a",
       "src": "https://github.com/gbprod/substitute.nvim"
     },
+    "timber.nvim": {
+      "rev": "1038a15f846e73840819355cab1c4346e6cf97f6",
+      "src": "https://github.com/Goose97/timber.nvim"
+    },
     "tiny-glimmer.nvim": {
       "rev": "e83bab26665c2dd4153b8a24e172e674e7c6dee7",
       "src": "https://github.com/rachartier/tiny-glimmer.nvim"
@@ -185,6 +197,10 @@
     "treesitter-modules.nvim": {
       "rev": "dcb5030422732af54631083316887e512e4a79a3",
       "src": "https://github.com/MeanderingProgrammer/treesitter-modules.nvim"
+    },
+    "vim-illuminate": {
+      "rev": "0d1e93684da00ab7c057410fecfc24f434698898",
+      "src": "https://github.com/RRethy/vim-illuminate"
     },
     "vim-matchup": {
       "rev": "1c276e1",

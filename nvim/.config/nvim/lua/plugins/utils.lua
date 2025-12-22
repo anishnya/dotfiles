@@ -110,7 +110,7 @@ local origami = {
                         hlgroup = "Comment",
                     },
                     diagnosticsCount = true, -- uses hlgroups and icons from `vim.diagnostic.config().signs`
-                    gitsignsCount = true, -- requires `gitsigns.nvim`
+                    gitsignsCount = true,    -- requires `gitsigns.nvim`
                     disableOnFt = { "snacks_picker_input" }, ---@type string[]
                 },
                 autoFold = {
@@ -118,9 +118,9 @@ local origami = {
                     kinds = { "comment", "imports" }, ---@type lsp.FoldingRangeKind[]
                 },
                 foldKeymaps = {
-                    setup = false, -- modifies `h`, `l`, `^`, and `$`
+                    setup = true, -- modifies `h`, `l`, `^`, and `$`
                 },
-            } )
+            })
         end,
         lazy = false,
     }
@@ -205,7 +205,6 @@ local tiny_glimmer = {
         end,
     }
 }
-
 
 ---@type lz.n.pack.Spec
 local yanky = {
@@ -341,6 +340,56 @@ local todo = {
     }
 }
 
+---@type lz.n.pack.Spec
+local illuminate = {
+    src = "https://github.com/RRethy/vim-illuminate",
+    data = {
+        "vim-illuminate",
+        after = function()
+            require("illuminate").configure({
+                providers = {
+                    'lsp',
+                    'treesitter',
+                    'regex',
+                },
+                delay = 100,
+                filetypes_denylist = {
+                    'oil',
+                    'dirbuf',
+                    'dirvish',
+                    'snacks_dashboard',
+                },
+            })
+        end,
+        lazy = false,
+    }
+}
+
+local timber = {
+    src = "https://github.com/Goose97/timber.nvim",
+    data = {
+        "timber.nvim",
+        keys = {
+            { "glj" },
+            { "glk" },
+            { "glb" },
+            {
+                "<leader>tt",
+                function() require("timber.actions").toggle_comment_log_statements({ global = false }) end,
+                desc = "Toggle Log Statements"
+            },
+            {
+                "<leader>tc",
+                function() require("timber.actions").clear_log_statements({ global = false }) end,
+                desc = "Clear Log Statements"
+            }
+        },
+        after = function()
+            require("timber").setup()
+        end
+    }
+}
+
 loader.load_plugins(
     {
         {
@@ -384,6 +433,12 @@ loader.load_plugins(
         },
         {
             plug = origami,
-        }
+        },
+        {
+            plug = illuminate,
+        },
+        {
+            plug = timber,
+        },
     }
 )
