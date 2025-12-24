@@ -111,14 +111,14 @@ local origami = {
                     },
                     diagnosticsCount = true, -- uses hlgroups and icons from `vim.diagnostic.config().signs`
                     gitsignsCount = true,    -- requires `gitsigns.nvim`
-                    disableOnFt = { "snacks_picker_input" }, ---@type string[]
+                    disableOnFt = { "snacks_picker_input", "oil" }, ---@type string[]
                 },
                 autoFold = {
                     enabled = true,
                     kinds = { "comment", "imports" }, ---@type lsp.FoldingRangeKind[]
                 },
                 foldKeymaps = {
-                    setup = true, -- modifies `h`, `l`, `^`, and `$`
+                    setup = false,
                 },
             })
         end,

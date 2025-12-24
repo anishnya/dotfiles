@@ -111,6 +111,14 @@ local treesitter_text_objs = {
                 require "nvim-treesitter-textobjects.select".select_textobject("@comment.inner", "textobjects")
             end)
 
+            -- Assignments
+            vim.keymap.set({ "x", "o" }, "a=", function()
+                require "nvim-treesitter-textobjects.select".select_textobject("@assignment.outer", "textobjects")
+            end)
+            vim.keymap.set({ "x", "o" }, "i=", function()
+                require "nvim-treesitter-textobjects.select".select_textobject("@assignment.inner", "textobjects")
+            end)
+
             -- Parameters
             vim.keymap.set({ "x", "o" }, "ar", function()
                 require "nvim-treesitter-textobjects.select".select_textobject("@paramter.outer", "textobjects")
@@ -119,10 +127,10 @@ local treesitter_text_objs = {
                 require "nvim-treesitter-textobjects.select".select_textobject("@parameter.inner", "textobjects")
             end)
             vim.keymap.set({ "n", "x", "o" }, "]r", function()
-                require("nvim-treesitter-textobjects.move").goto_next_start("@parameter.outer", "textobjects")
+                require("nvim-treesitter-textobjects.move").goto_next_start("@parameter.inner", "textobjects")
             end)
             vim.keymap.set({ "n", "x", "o" }, "[r", function()
-                require("nvim-treesitter-textobjects.move").goto_previous_start("@parameter.outer", "textobjects")
+                require("nvim-treesitter-textobjects.move").goto_previous_start("@parameter.inner", "textobjects")
             end)
 
             -- Folds
@@ -181,6 +189,49 @@ local treesitter_various = {
     }
 }
 
+local treesitter_sj = {
+    src = "https://github.com/Wansmer/treesj",
+    data = {
+        "treesj",
+        keys = {
+            {
+                "<leader>l", function() require('treesj').split() end, desc = "Treesj Split",
+            },
+            {
+                "<leader>j", function() require('treesj').join() end, desc = "Treesj Join",
+            },
+            {
+                "<leader>m", function() require('treesj').toggle() end, desc = "Treesj Toggle",
+            }
+        },
+        after = function()
+            require("treesj").setup()
+        end,
+    }
+}
+
+local treewalker = {
+    src = "https://github.com/aaronik/treewalker.nvim",
+    data = {
+        "treewalker.nvim",
+        after = function()
+            require("treewalker").setup()
+
+            -- movement
+            vim.keymap.set({ 'n', 'v' }, '<C-k>', '<cmd>Treewalker Up<cr>', { silent = true })
+            vim.keymap.set({ 'n', 'v' }, '<C-j>', '<cmd>Treewalker Down<cr>', { silent = true })
+            vim.keymap.set({ 'n', 'v' }, '<C-h>', '<cmd>Treewalker Left<cr>', { silent = true })
+            vim.keymap.set({ 'n', 'v' }, '<C-l>', '<cmd>Treewalker Right<cr>', { silent = true })
+
+            -- swapping
+            vim.keymap.set('n', '<C-S-k>', '<cmd>Treewalker SwapUp<cr>', { silent = true })
+            vim.keymap.set('n', '<C-S-j>', '<cmd>Treewalker SwapDown<cr>', { silent = true })
+            vim.keymap.set('n', '<C-S-h>', '<cmd>Treewalker SwapLeft<cr>', { silent = true })
+            vim.keymap.set('n', '<C-S-l>', '<cmd>Treewalker SwapRight<cr>', { silent = true })
+        end,
+        lazy = false
+    }
+}
 
 loader.load_plugins(
     {
@@ -198,6 +249,12 @@ loader.load_plugins(
         },
         {
             plug = treesitter_various,
-        }
+        },
+        {
+            plug = treesitter_sj,
+        },
+        {
+            plug = treewalker,
+        },
     }
 )

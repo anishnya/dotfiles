@@ -28,9 +28,9 @@ require("blink.cmp").setup({
         ["<Tab>"] = { "snippet_forward", "fallback_to_mappings" },
         ["<M-Tab>"] = { "snippet_backward", "fallback_to_mappings" },
 
-        ['<C-u>'] = { 'scroll_signature_up', 'fallback' },
-        ['<C-d>'] = { 'scroll_signature_down', 'fallback' },
-        ['<C-k>'] = { 'show_signature', 'hide_signature', "fallback_to_mappings" },
+        ['<C-u>'] = { 'scroll_signature_up', "fallback_to_mappings" },
+        ['<C-d>'] = { 'scroll_signature_down', "fallback_to_mappings" },
+        ['<C-g>'] = { 'show_signature', 'hide_signature', "fallback_to_mappings" },
     },
     completion = {
         accept = {

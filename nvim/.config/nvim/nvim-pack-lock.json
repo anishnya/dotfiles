@@ -202,6 +202,14 @@
       "rev": "dcb5030422732af54631083316887e512e4a79a3",
       "src": "https://github.com/MeanderingProgrammer/treesitter-modules.nvim"
     },
+    "treesj": {
+      "rev": "186084dee5e9c8eec40f6e39481c723dd567cb05",
+      "src": "https://github.com/Wansmer/treesj"
+    },
+    "treewalker.nvim": {
+      "rev": "c1028cb50ba61ac21c712fa1a8b7a121cf256512",
+      "src": "https://github.com/aaronik/treewalker.nvim"
+    },
     "vim-illuminate": {
       "rev": "0d1e93684da00ab7c057410fecfc24f434698898",
       "src": "https://github.com/RRethy/vim-illuminate"
