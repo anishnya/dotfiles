@@ -1,4 +1,5 @@
 local loader = require("utils.loader")
+local ignore_filetypes = { "oil", "snacks_picker_input", "mason", "snacks_dashboard" }
 
 local splits = {
     src = "https://github.com/mrjones2014/smart-splits.nvim",
@@ -39,8 +40,8 @@ local focus = {
             { "<leader>wk", function() require("focus").split_command("k") end, desc = "Split Down" },
             { "<leader>wl", function() require("focus").split_command("l") end, desc = "Split Right" },
             { "<leader>wn", function() require("focus").split_nicely() end,     desc = "Split Evenly" },
-            { "<leader>ss", function() require("focus").split_command("j") end,     desc = "Split Horiztonal" },
-            { "<leader>sv", function() require("focus").split_command("l") end,     desc = "Split Vertical" },
+            { "<leader>ss", function() require("focus").split_command("j") end, desc = "Split Horiztonal" },
+            { "<leader>sv", function() require("focus").split_command("l") end, desc = "Split Vertical" },
         },
         after = function()
             require("focus").setup({
@@ -81,6 +82,21 @@ local focus = {
             vim.keymap.set("n", "<leader>wm", "<cmd>:FocusMaximise<CR>")
             vim.keymap.set("n", "<leader>wq", "<cmd>:FocusMaxOrEqual<CR>")
             vim.keymap.set("n", "<leader>wt", "<cmd>:FocusToggle<CR>")
+
+            -- Autocmd for specific filetypes
+            local augroup = vim.api.nvim_create_augroup('FocusDisable', { clear = true })
+
+            vim.api.nvim_create_autocmd('FileType', {
+                group = augroup,
+                callback = function(_)
+                    if vim.tbl_contains(ignore_filetypes, vim.bo.filetype) then
+                        vim.b.focus_disable = true
+                    else
+                        vim.b.focus_disable = false
+                    end
+                end,
+                desc = 'Disable focus autoresize for FileType',
+            })
         end
     }
 }

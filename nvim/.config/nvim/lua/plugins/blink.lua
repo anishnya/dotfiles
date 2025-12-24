@@ -30,7 +30,7 @@ require("blink.cmp").setup({
 
         ['<C-u>'] = { 'scroll_signature_up', "fallback_to_mappings" },
         ['<C-d>'] = { 'scroll_signature_down', "fallback_to_mappings" },
-        ['<C-g>'] = { 'show_signature', 'hide_signature', "fallback_to_mappings" },
+        ['<C-s>'] = { 'show_signature', 'hide_signature', "fallback_to_mappings" },
     },
     completion = {
         accept = {

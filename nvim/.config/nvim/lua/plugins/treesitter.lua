@@ -1,14 +1,5 @@
 local loader = require("utils.loader")
 
--- Treesitter Setup
-local languages = require("utils.installed_langs")
-local languages_list = {}
-for _, lang in ipairs(languages) do
-    if lang.language then
-        table.insert(languages_list, lang.language)
-    end
-end
-
 local treesitter = {
     src = "https://github.com/nvim-treesitter/nvim-treesitter",
     version = "main",
@@ -27,7 +18,6 @@ local treesitter_modules = {
         "treesitter-modules.nvim",
         after = function()
             require("treesitter-modules").setup({
-                ensure_installed = languages_list,
                 fold = { enable = true },
                 highlight = { enable = true },
                 indent = { enable = true },

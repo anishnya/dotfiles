@@ -25,15 +25,16 @@ opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
 opt.undofile = true
 opt.winborder = "rounded"
 opt.hlsearch = false
+opt.foldlevelstart = 99
 
 --- Relative line numbering
 function _G.line_numbering(lnum, relnum)
     local result
 
     if relnum == 0 then
-        result = string.format("%3d", lnum)
+        result = string.format("%d", lnum)
     else
-        result = string.format("%3d", relnum)
+        result = string.format("%d", relnum)
     end
 
     return result .. ' '
@@ -47,13 +48,13 @@ function _G.abs_line_numbering(lnum, relnum)
     if relnum == 0 then
         result = ""
     else
-        result = string.format("%3d", lnum)
+        result = string.format("%d", lnum)
     end
 
     return result .. ' '
 end
 
-opt.statuscolumn = '%=%s%=%{v:virtnum > 0 ? "" : v:lua.line_numbering(v:lnum, v:relnum)}'
+opt.statuscolumn = '%s%=%{v:virtnum > 0 ? "" : v:lua.line_numbering(v:lnum, v:relnum)}'
 
 vim.cmd.filetype("plugin indent on")
 

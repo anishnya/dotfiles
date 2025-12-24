@@ -40,6 +40,10 @@
       "rev": "98173490a7d292487fa413dcc9208a84fdda5d57",
       "src": "https://github.com/anishnya/comfy-line-numbers.nvim"
     },
+    "conform.nvim": {
+      "rev": "5420c4b5ea0aeb99c09cfbd4fd0b70d257b44f25",
+      "src": "https://github.com/stevearc/conform.nvim"
+    },
     "copilot.lua": {
       "rev": "4383e05",
       "src": "https://github.com/zbirenbaum/copilot.lua"
@@ -119,6 +123,10 @@
     "nvim-colorizer.lua": {
       "rev": "51cf7c9",
       "src": "https://github.com/catgoose/nvim-colorizer.lua"
+    },
+    "nvim-lspconfig": {
+      "rev": "8973916a3d015d65a8c4614e141f4270a713cf33",
+      "src": "https://github.com/neovim/nvim-lspconfig"
     },
     "nvim-origami": {
       "rev": "e33d5cac5a3097f77a087274948c13736f25d2f8",
