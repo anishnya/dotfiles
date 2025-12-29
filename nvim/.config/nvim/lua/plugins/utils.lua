@@ -404,9 +404,6 @@ loader.load_plugins(
             plug = atone,
         },
         {
-            plug = diffview,
-        },
-        {
             plug = oil,
         },
         {
@@ -432,9 +429,6 @@ loader.load_plugins(
         },
         {
             plug = origami,
-        },
-        {
-            plug = illuminate,
         },
         {
             plug = timber,

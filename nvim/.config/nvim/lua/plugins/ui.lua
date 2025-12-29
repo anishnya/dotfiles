@@ -151,9 +151,6 @@ loader.load_plugins({
         plug = color_scheme,
     },
     {
-        plug = quick_scope,
-    },
-    {
         plug = smear_cursor,
     },
     {

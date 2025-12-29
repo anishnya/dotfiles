@@ -44,17 +44,9 @@
       "rev": "5420c4b5ea0aeb99c09cfbd4fd0b70d257b44f25",
       "src": "https://github.com/stevearc/conform.nvim"
     },
-    "copilot.lua": {
-      "rev": "4383e05",
-      "src": "https://github.com/zbirenbaum/copilot.lua"
-    },
     "dial.nvim": {
       "rev": "f0404ec",
       "src": "https://github.com/monaqa/dial.nvim"
-    },
-    "diffview.nvim": {
-      "rev": "4516612fe98ff56ae0415a259ff6361a89419b0a",
-      "src": "https://github.com/sindrets/diffview.nvim"
     },
     "fidget.nvim": {
       "rev": "e32b672d8fd343f9d6a76944fedb8c61d7d8111a",
@@ -88,25 +80,9 @@
       "rev": "6bdb14f",
       "src": "https://github.com/mason-org/mason-lspconfig.nvim"
     },
-    "mason-tool-installer.nvim": {
-      "rev": "517ef59",
-      "src": "https://github.com/WhoIsSethDaniel/mason-tool-installer.nvim"
-    },
     "mason.nvim": {
       "rev": "ad7146a",
       "src": "https://github.com/mason-org/mason.nvim"
-    },
-    "mini.ai": {
-      "rev": "11c5718",
-      "src": "https://github.com/nvim-mini/mini.ai"
-    },
-    "mini.cmdline": {
-      "rev": "59a297e160f25a7b49a35182b200a5259db6a9b7",
-      "src": "https://github.com/nvim-mini/mini.cmdline"
-    },
-    "mini.pairs": {
-      "rev": "b9aada8",
-      "src": "https://github.com/nvim-mini/mini.pairs"
     },
     "modicator.nvim": {
       "rev": "0bc989b32a7ba3cab06cb79a433557384eb2a0be",
@@ -170,10 +146,6 @@
       "rev": "f9b91ebfa58d2833fd3e5ecd2cc8245a9eff2f2c",
       "src": "https://github.com/anishnya/plugin-view.nvim.git"
     },
-    "quick-scope": {
-      "rev": "6cee1d9",
-      "src": "https://github.com/unblevable/quick-scope"
-    },
     "smart-splits.nvim": {
       "rev": "e892a5d",
       "src": "https://github.com/mrjones2014/smart-splits.nvim"
@@ -217,10 +189,6 @@
     "treewalker.nvim": {
       "rev": "c1028cb50ba61ac21c712fa1a8b7a121cf256512",
       "src": "https://github.com/aaronik/treewalker.nvim"
-    },
-    "vim-illuminate": {
-      "rev": "0d1e93684da00ab7c057410fecfc24f434698898",
-      "src": "https://github.com/RRethy/vim-illuminate"
     },
     "vim-matchup": {
       "rev": "1c276e1",

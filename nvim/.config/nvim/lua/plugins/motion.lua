@@ -5,7 +5,6 @@ local matchup = {
     src = "https://github.com/andymass/vim-matchup",
     data = {
         "vim-matchup",
-        event = "VimEnter",
         after = function()
             require("match-up").setup({
                 treesitter = {
@@ -13,6 +12,7 @@ local matchup = {
                 }
             })
         end,
+        lazy = false,
     }
 }
 

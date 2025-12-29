@@ -8,8 +8,8 @@ export NVM_DIR="$HOME/.nvm"
 
 # Bun
 export BUN_INSTALL="$HOME/.bun"
-source "$BUN_INSTALL/bin"
-[ -s "$BUN_INSTALL/_bun" ] && source "$BUN_INSTALL/_bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+[ -s "$BUN_INSTALL/_bun" ] && \. "$BUN_INSTALL/_bun"
 
 # Zinit Intialization
 setopt GLOB_DOTS
