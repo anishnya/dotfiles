@@ -139,6 +139,18 @@ local which_key = {
 }
 
 ---@type lz.n.pack.Spec
+local csv_view = {
+    src = "https://github.com/hat0uma/csvview.nvim",
+    data = {
+        "csvview.nvim",
+        after = function()
+            require("csvview").setup()
+        end,
+        lazy = false,
+    }
+}
+
+---@type lz.n.pack.Spec
 local tiny_glimmer = {
     src = "https://github.com/rachartier/tiny-glimmer.nvim",
     data = {
@@ -432,6 +444,9 @@ loader.load_plugins(
         },
         {
             plug = timber,
+        },
+        {
+            plug = csv_view,
         },
     }
 )

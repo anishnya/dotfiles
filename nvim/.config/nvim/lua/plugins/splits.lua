@@ -1,5 +1,4 @@
 local loader = require("utils.loader")
-local ignore_filetypes = { "oil", "snacks_picker_input", "mason", "snacks_dashboard" }
 
 local splits = {
     src = "https://github.com/mrjones2014/smart-splits.nvim",
@@ -58,21 +57,21 @@ local focus = {
                     height_quickfix = 10,
                 },
                 split = {
-                    bufnew = true,
+                    bufnew = false,
                 },
                 ui = {
-                    number = false,
-                    relativenumber = false,
+                    number = true,
+                    relativenumber = true,
                     hybridnumber = false,
                     absolutenumber_unfocussed = false,
 
-                    cursorline = false,
+                    cursorline = true,
                     cursorcolumn = false,
                     colorcolumn = {
                         enable = false,
                         list = '+1',
                     },
-                    signcolumn = false,
+                    signcolumn = true,
                     winhighlight = true,
                 }
             })
@@ -83,8 +82,24 @@ local focus = {
             vim.keymap.set("n", "<leader>wq", "<cmd>:FocusMaxOrEqual<CR>")
             vim.keymap.set("n", "<leader>wt", "<cmd>:FocusToggle<CR>")
 
-            -- Autocmd for specific filetypes
-            local augroup = vim.api.nvim_create_augroup('FocusDisable', { clear = true })
+            local ignore_filetypes = { 'oil' }
+            local ignore_buftypes = { 'nofile', 'prompt', 'popup' }
+
+            local augroup =
+                vim.api.nvim_create_augroup('FocusDisable', { clear = true })
+
+            vim.api.nvim_create_autocmd('WinEnter', {
+                group = augroup,
+                callback = function(_)
+                    if vim.tbl_contains(ignore_buftypes, vim.bo.buftype)
+                    then
+                        vim.w.focus_disable = true
+                    else
+                        vim.w.focus_disable = false
+                    end
+                end,
+                desc = 'Disable focus autoresize for BufType',
+            })
 
             vim.api.nvim_create_autocmd('FileType', {
                 group = augroup,
