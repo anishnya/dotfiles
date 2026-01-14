@@ -401,6 +401,21 @@ local timber = {
     }
 }
 
+local bento = {
+    src = "https://github.com/serhez/bento.nvim",
+    data = {
+        "bento.nvim",
+        after = function()
+            require("bento").setup({
+                ui = {
+                    mode = "tabline"
+                }
+            })
+        end,
+        lazy = false,
+    }
+}
+
 loader.load_plugins(
     {
         {
@@ -447,6 +462,9 @@ loader.load_plugins(
         },
         {
             plug = csv_view,
+        },
+        {
+            plug = bento,
         },
     }
 )

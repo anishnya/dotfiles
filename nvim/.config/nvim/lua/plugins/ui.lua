@@ -2,15 +2,15 @@ local loader = require("utils.loader")
 
 ---@type lz.n.pack.Spec
 local color_scheme = {
-    src = "https://github.com/rose-pine/neovim",
+    src = "https://github.com/serhez/teide.nvim",
     data = {
-        "neovim",
+        "teide.nvim",
         after = function()
-            require("rose-pine").setup({
-                variant = "moon",
+            require("teide").setup({
+                style = "dimmed",
             })
 
-            vim.cmd.colorscheme("rose-pine")
+            vim.cmd.colorscheme("teide-dimmed")
         end,
         lazy = false,
     }
@@ -24,7 +24,7 @@ local quick_scope = {
         "quick-scope",
         after = function()
             vim.g.qs_highlight_on_keys = { "f", "F", "t", "T" }
-            vim.g.qs_enable = 0
+            vim.g.qs_enable = 1
             vim.g.qs_lazy_highlight = 1
 
             vim.keymap.set("n", "<leader>q", "<plug>(QuickScopeToggle)", { noremap = true, silent = true })
@@ -79,7 +79,7 @@ local lualine = {
         after = function()
             require("lualine").setup({
                 options = {
-                    theme = "auto"
+                    theme = "teide",
                 },
                 sections = {
                     lualine_c = {
@@ -170,5 +170,8 @@ loader.load_plugins({
     },
     {
         plug = modicator,
+    },
+    {
+        plug = quick_scope,
     },
 })

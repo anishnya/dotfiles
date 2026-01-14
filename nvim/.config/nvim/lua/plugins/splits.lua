@@ -59,21 +59,6 @@ local focus = {
                 split = {
                     bufnew = false,
                 },
-                ui = {
-                    number = true,
-                    relativenumber = true,
-                    hybridnumber = false,
-                    absolutenumber_unfocussed = false,
-
-                    cursorline = true,
-                    cursorcolumn = false,
-                    colorcolumn = {
-                        enable = false,
-                        list = '+1',
-                    },
-                    signcolumn = true,
-                    winhighlight = true,
-                }
             })
 
             -- Regular Keymaps
@@ -82,8 +67,17 @@ local focus = {
             vim.keymap.set("n", "<leader>wq", "<cmd>:FocusMaxOrEqual<CR>")
             vim.keymap.set("n", "<leader>wt", "<cmd>:FocusToggle<CR>")
 
-            local ignore_filetypes = { 'oil' }
-            local ignore_buftypes = { 'nofile', 'prompt', 'popup' }
+            local ignore_filetypes = {
+                'mason',
+                'which-key',
+                'help',
+                'snacks_picker_input'
+            }
+            local ignore_buftypes = {
+                'nofile',
+                'prompt',
+                'popup',
+            }
 
             local augroup =
                 vim.api.nvim_create_augroup('FocusDisable', { clear = true })

@@ -37,7 +37,7 @@ loader.load_plugins(
         {
             plug = matchup,
         },
-        {
-            plug = arrow,
-        }
+        -- {
+        --     plug = arrow,
+        -- }
     })

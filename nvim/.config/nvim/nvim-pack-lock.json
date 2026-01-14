@@ -20,6 +20,10 @@
       "rev": "7a5ef04",
       "src": "https://github.com/XXiaoA/atone.nvim"
     },
+    "bento.nvim": {
+      "rev": "e7c67aa27d1e21fd3312bde85575c12788c69e6c",
+      "src": "https://github.com/serhez/bento.nvim"
+    },
     "blink": {
       "rev": "f13226770b4947eb7e66befbeb53c3db39f13e25",
       "src": "https://github.com/Saghen/blink.cmp"
@@ -150,6 +154,10 @@
       "rev": "f9b91ebfa58d2833fd3e5ecd2cc8245a9eff2f2c",
       "src": "https://github.com/anishnya/plugin-view.nvim.git"
     },
+    "quick-scope": {
+      "rev": "6cee1d9e0b9ac0fbffeb538d4a5ba9f5628fabbc",
+      "src": "https://github.com/unblevable/quick-scope"
+    },
     "smart-splits.nvim": {
       "rev": "e892a5d",
       "src": "https://github.com/mrjones2014/smart-splits.nvim"
@@ -165,6 +173,10 @@
     "substitute.nvim": {
       "rev": "9db749a",
       "src": "https://github.com/gbprod/substitute.nvim"
+    },
+    "teide.nvim": {
+      "rev": "95041d1d78e786bd88be64bca3e1771f7b6236df",
+      "src": "https://github.com/serhez/teide.nvim"
     },
     "timber.nvim": {
       "rev": "1038a15f846e73840819355cab1c4346e6cf97f6",
