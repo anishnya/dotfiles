@@ -100,7 +100,10 @@ local origami = {
         "nvim-origami",
         after = function()
             require("origami").setup({
-                useLspFoldsWithTreesitterFallback = true,
+                useLspFoldsWithTreesitterFallback = {
+                    enabled = true,
+                    foldmethodIfNeitherIsAvailable = "indent", ---@type string|fun(bufnr: number): string
+                },
                 pauseFoldsOnSearch = true,
                 foldtext = {
                     enabled = true,

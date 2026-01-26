@@ -13,7 +13,6 @@ opt.tabstop = 4
 opt.softtabstop = 4
 opt.shiftwidth = 4
 opt.shiftround = true
-opt.listchars = "tab: ,multispace:|   ,eol:󰌑"
 opt.list = true
 opt.number = true
 opt.relativenumber = true
@@ -53,8 +52,6 @@ function _G.abs_line_numbering(lnum, relnum)
 
     return result .. ' '
 end
-
-opt.statuscolumn = '%s%=%{v:virtnum > 0 ? "" : v:lua.line_numbering(v:lnum, v:relnum)}'
 
 vim.cmd.filetype("plugin indent on")
 

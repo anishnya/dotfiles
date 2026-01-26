@@ -68,6 +68,7 @@ local focus = {
             vim.keymap.set("n", "<leader>wt", "<cmd>:FocusToggle<CR>")
 
             local ignore_filetypes = {
+                'aerial',
                 'mason',
                 'which-key',
                 'help',

@@ -135,9 +135,6 @@ loader.load_plugins(
             plug = blink_indent,
         },
         {
-            plug = comfy_lines,
-        },
-        {
             plug = friendly_snippets,
         },
         {

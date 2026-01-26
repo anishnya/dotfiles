@@ -29,6 +29,7 @@ local quick_scope = {
 
             vim.keymap.set("n", "<leader>q", "<plug>(QuickScopeToggle)", { noremap = true, silent = true })
         end,
+        lazy = false,
     }
 }
 
@@ -46,6 +47,7 @@ local smear_cursor = {
                 smear_insert_mode = true,
             })
         end,
+        lazy = false,
     }
 }
 
@@ -57,6 +59,7 @@ local nvim_colorizer = {
         after = function()
             require("colorizer").setup()
         end,
+        lazy = false,
     }
 }
 
@@ -68,6 +71,7 @@ local colorful_menu = {
         after = function()
             require("colorful-menu").setup()
         end,
+        laxy = false,
     }
 }
 
@@ -146,6 +150,65 @@ local hl_args = {
     }
 }
 
+---@type lz.n.pack.Spec
+local win_seperator = {
+    src = "https://github.com/nvim-zh/colorful-winsep.nvim",
+    data = {
+        "colorful-winsep.nvim",
+        after = function()
+            require("colorful-winsep").setup()
+        end,
+        event = "WinLeave",
+    }
+}
+
+---@type lz.n.pack.Spec
+local statuscol = {
+    src = "https://github.com/luukvbaal/statuscol.nvim",
+    data = {
+        "statuscol.nvim",
+        after = function()
+            local builtin = require("statuscol.builtin")
+            require("statuscol").setup({
+                setopt = true,      -- Automatically set the 'statuscolumn' option
+                relculright = true, -- Right-align relative line numbers
+                segments = {
+                    {
+                        sign = { namespace = { "gitsigns" }, colwidth = 1, wrap = true },
+                        click = "v:lua.ScSa",
+                    },
+                    {
+                        sign = {
+                            namespace = { "diagnostic.signs" },
+                            colwidth = 1,
+                            maxwidth = 1,
+                        },
+                        click = "v:lua.ScSa",
+                    },
+                    {
+                        text = { builtin.lnumfunc, " " },
+                        condition = { true, builtin.not_empty },
+                        click = "v:lua.ScLa",
+                    },
+                    {
+                        text = { "┃ " },
+                    },
+                },
+                ft_ignore = {
+                    "oil",
+                    "aerial",
+                    "help",
+                    "mason",
+                    "snacks_picker_input",
+                    "snacks_picker_preview",
+                },
+                bt_ignore = { "nofile", "terminal" },
+            })
+        end,
+        lazy = false,
+    }
+}
+
 loader.load_plugins({
     {
         plug = color_scheme,
@@ -173,5 +236,11 @@ loader.load_plugins({
     },
     {
         plug = quick_scope,
+    },
+    {
+        plug = win_seperator,
+    },
+    {
+        plug = statuscol,
     },
 })
