@@ -16,28 +16,10 @@ local matchup = {
     }
 }
 
----@type lz.n.pack.Spec
-local arrow = {
-    src = "https://github.com/otavioschwanck/arrow.nvim",
-    data = {
-        "arrow.nvim",
-        event = "VimEnter",
-        after = function()
-            require('arrow').setup({
-                show_icons = true,
-                leader_key = ';',        -- Recommended to be a single key
-                buffer_leader_key = 'm', -- Per Buffer Mappings
-            })
-        end,
-    }
-}
-
 loader.load_plugins(
     {
         {
             plug = matchup,
         },
-        -- {
-        --     plug = arrow,
-        -- }
-    })
+    }
+)

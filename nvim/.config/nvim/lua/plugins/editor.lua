@@ -2,12 +2,13 @@ local loader = require("utils.loader")
 
 ---@type lz.n.pack.Spec
 local comment = {
-    src = "https://github.com/numToStr/Comment.nvim",
+    src = "https://github.com/nvim-mini/mini.comment",
     data = {
-        "Comment.nvim",
+        "mini.comment",
         after = function()
-            require("Comment").setup()
+            require("mini.comment").setup()
         end,
+        lazy = false,
     }
 }
 
@@ -20,6 +21,7 @@ local inline_diag = {
         after = function()
             require("tiny-inline-diagnostic").setup()
         end,
+        lazy = false,
     }
 }
 
@@ -114,7 +116,9 @@ local autopairs = {
     data = {
         "nvim-autopairs",
         after = function()
-            require("nvim-autopairs").setup()
+            require("nvim-autopairs").setup({
+                check_ts = true
+            })
         end,
         lazy = false,
     }

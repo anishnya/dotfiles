@@ -223,6 +223,17 @@ local treewalker = {
     }
 }
 
+local ts_auto_tag = {
+    src = "https://github.com/windwp/nvim-ts-autotag",
+    data = {
+        "nvim-ts-autotag",
+        after = function()
+            require("nvim-ts-autotag").setup()
+        end,
+        lazy = false
+    }
+}
+
 loader.load_plugins(
     {
         {
@@ -246,5 +257,8 @@ loader.load_plugins(
         {
             plug = treewalker,
         },
+        {
+            plug = ts_auto_tag,
+        }
     }
 )

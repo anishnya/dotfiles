@@ -7,10 +7,10 @@ local color_scheme = {
         "teide.nvim",
         after = function()
             require("teide").setup({
-                style = "dimmed",
+                style = "darker",
             })
 
-            vim.cmd.colorscheme("teide-dimmed")
+            vim.cmd.colorscheme("teide-darker")
         end,
         lazy = false,
     }
@@ -24,7 +24,7 @@ local quick_scope = {
         "quick-scope",
         after = function()
             vim.g.qs_highlight_on_keys = { "f", "F", "t", "T" }
-            vim.g.qs_enable = 1
+            vim.g.qs_enable = 0
             vim.g.qs_lazy_highlight = 1
 
             vim.keymap.set("n", "<leader>q", "<plug>(QuickScopeToggle)", { noremap = true, silent = true })
@@ -71,7 +71,7 @@ local colorful_menu = {
         after = function()
             require("colorful-menu").setup()
         end,
-        laxy = false,
+        lazy = false,
     }
 }
 
@@ -147,6 +147,7 @@ local hl_args = {
         after = function()
             require("hlargs").setup()
         end,
+        lazy = false,
     }
 }
 
@@ -195,7 +196,6 @@ local statuscol = {
                     },
                 },
                 ft_ignore = {
-                    "oil",
                     "aerial",
                     "help",
                     "mason",

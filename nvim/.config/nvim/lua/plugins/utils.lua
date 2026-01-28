@@ -76,15 +76,6 @@ local atone = {
 }
 
 ---@type lz.n.pack.Spec
-local diffview = {
-    src = "https://github.com/sindrets/diffview.nvim",
-    data = {
-        "diffview.nvim",
-        command = "Diffview",
-    }
-}
-
----@type lz.n.pack.Spec
 local web_dev_icons = {
     src = "https://github.com/nvim-tree/nvim-web-devicons",
     data = {
@@ -167,31 +158,20 @@ local tiny_glimmer = {
                 refresh_interval_ms = 8,
                 text_change_batch_timeout_ms = 50,
 
-                -- Automatic keybinding overwrites
                 overwrite = {
                     auto_map = true,
-
-                    -- Yank operation animation
                     yank = {
                         enabled = true,
                     },
-
-                    -- Search navigation animation
                     search = {
                         enabled = true,
                     },
-
-                    -- Paste operation animation
                     paste = {
                         enabled = true,
                     },
-
-                    -- Undo operation animation
                     undo = {
                         enabled = true,
                     },
-
-                    -- Redo operation animation
                     redo = {
                         enabled = true,
                     },
@@ -351,31 +331,6 @@ local todo = {
         after = function()
             require("todo-comments").setup()
         end,
-    }
-}
-
----@type lz.n.pack.Spec
-local illuminate = {
-    src = "https://github.com/RRethy/vim-illuminate",
-    data = {
-        "vim-illuminate",
-        after = function()
-            require("illuminate").configure({
-                providers = {
-                    'lsp',
-                    'treesitter',
-                    'regex',
-                },
-                delay = 100,
-                filetypes_denylist = {
-                    'oil',
-                    'dirbuf',
-                    'dirvish',
-                    'snacks_dashboard',
-                },
-            })
-        end,
-        lazy = false,
     }
 }
 
