@@ -31,7 +31,7 @@ end, { desc = '[T]oggle [F]ormat on Save' })
 keymap.set("n", "gao", function() vim.lsp.buf.outgoing_calls() end, { desc = "LSP Outgoing Calls" })
 keymap.set("n", "gai", function() vim.lsp.buf.incoming_calls() end, { desc = "LSP Outgoing Calls" })
 keymap.set("n", "gd", function() vim.lsp.buf.declaration() end, { desc = "LSP Declaration" })
-keymap.set("n", "gD", function() vim.lsp.buf.defintion() end, { desc = "LSP Defintion" })
+keymap.set("n", "gD", function() vim.lsp.buf.definition() end, { desc = "LSP Definition" })
 keymap.set("n", "go", function() vim.lsp.buf.document_symbol() end, { desc = "LSP Document Symbols" })
 keymap.set("n", "gO", function() vim.lsp.buf.workspace_symbol() end, { desc = "LSP Workspace Symbols" })
 

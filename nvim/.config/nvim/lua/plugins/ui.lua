@@ -14,20 +14,15 @@ local color_scheme = {
         end,
         lazy = false,
     }
-
 }
 
 ---@type lz.n.pack.Spec
-local quick_scope = {
-    src = "https://github.com/unblevable/quick-scope",
+local flash = {
+    src = "https://github.com/folke/flash.nvim",
     data = {
-        "quick-scope",
+        "flash.nvim",
         after = function()
-            vim.g.qs_highlight_on_keys = { "f", "F", "t", "T" }
-            vim.g.qs_enable = 0
-            vim.g.qs_lazy_highlight = 1
-
-            vim.keymap.set("n", "<leader>q", "<plug>(QuickScopeToggle)", { noremap = true, silent = true })
+            require("flash").setup()
         end,
         lazy = false,
     }
@@ -192,7 +187,11 @@ local statuscol = {
                         click = "v:lua.ScLa",
                     },
                     {
-                        text = { "┃ " },
+                        hl = "CursorLineNr",
+                        text = { "┃" },
+                    },
+                    {
+                        text = { " " },
                     },
                 },
                 ft_ignore = {
@@ -207,6 +206,35 @@ local statuscol = {
         end,
         lazy = false,
     }
+}
+
+local quicker = {
+    src = "https://github.com/stevearc/quicker.nvim",
+    data = {
+        "quicker.nvim",
+        after = function()
+            require("quicker").setup({
+                keys = {
+                    {
+                        ">",
+                        function()
+                            require("quicker").expand({ before = 2, after = 2, add_to_existing = true })
+                        end,
+                        desc = "Expand quickfix context",
+                    },
+                    {
+                        "<",
+                        function()
+                            require("quicker").collapse()
+                        end,
+                        desc = "Collapse quickfix context",
+                    },
+                },
+            })
+        end,
+        lazy = false,
+    }
+
 }
 
 loader.load_plugins({
@@ -235,12 +263,15 @@ loader.load_plugins({
         plug = modicator,
     },
     {
-        plug = quick_scope,
+        plug = flash,
     },
     {
         plug = win_seperator,
     },
     {
         plug = statuscol,
+    },
+    {
+        plug = quicker,
     },
 })

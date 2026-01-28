@@ -334,6 +334,7 @@ local todo = {
     }
 }
 
+---@type lz.n.pack.Spec
 local timber = {
     src = "https://github.com/Goose97/timber.nvim",
     data = {
@@ -359,6 +360,7 @@ local timber = {
     }
 }
 
+---@type lz.n.pack.Spec
 local bento = {
     src = "https://github.com/serhez/bento.nvim",
     data = {
@@ -369,6 +371,19 @@ local bento = {
                     mode = "tabline"
                 }
             })
+        end,
+        lazy = false,
+    }
+}
+
+-- TODO: Add dependency
+---@type lz.n.pack.Spec
+local coerce = {
+    src = "https://github.com/gregorias/coerce.nvim",
+    data = {
+        "coerce.nvim",
+        after = function()
+            require("coerce").setup()
         end,
         lazy = false,
     }

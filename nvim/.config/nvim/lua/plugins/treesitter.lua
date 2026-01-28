@@ -17,12 +17,18 @@ local treesitter_modules = {
     data = {
         "treesitter-modules.nvim",
         after = function()
-            require("treesitter-modules").setup({
+            local ts = require("treesitter-modules")
+            ts.setup({
                 fold = { enable = true },
                 highlight = { enable = true },
                 indent = { enable = true },
                 incremental_selection = { enable = true },
             })
+
+            vim.keymap.set('n', 'gkn', ts.init_selection, { desc = "Treesitter Incremental Selection" })
+            vim.keymap.set('x', 'gkn', ts.node_incremental)
+            vim.keymap.set('x', 'gkc', ts.scope_incremental)
+            vim.keymap.set('x', 'gkm', ts.node_decremental)
         end,
         lazy = false
     }
@@ -171,8 +177,9 @@ local treesitter_various = {
         after = function()
             require("various-textobjs").setup({
                 keymaps = {
-                    useDefaults = true,
+                    useDefaults = false,
                 }
+                -- TODO: add custom key maps
             })
         end,
         lazy = false

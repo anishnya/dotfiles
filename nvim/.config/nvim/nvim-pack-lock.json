@@ -36,6 +36,10 @@
       "rev": "9c80820ca77218a8d28e70075d6f44a1609911fe",
       "src": "https://github.com/saghen/blink.indent"
     },
+    "coerce.nvim": {
+      "rev": "de8ad1663ba467003b90c79eaf5b8105964dd6f5",
+      "src": "https://github.com/gregorias/coerce.nvim"
+    },
     "colorful-menu.nvim": {
       "rev": "b51a659459df8d078201aefc995db8175ed55e84",
       "src": "https://github.com/xzbdmw/colorful-menu.nvim"
@@ -63,6 +67,10 @@
     "fidget.nvim": {
       "rev": "7fa433a83118a70fe24c1ce88d5f0bd3453c0970",
       "src": "https://github.com/j-hui/fidget.nvim"
+    },
+    "flash.nvim": {
+      "rev": "fcea7ff883235d9024dc41e638f164a450c14ca2",
+      "src": "https://github.com/folke/flash.nvim"
     },
     "focus.nvim": {
       "rev": "8732b45ceef77b576e60442e768437bce7915107",
@@ -169,6 +177,10 @@
     "quick-scope": {
       "rev": "6cee1d9e0b9ac0fbffeb538d4a5ba9f5628fabbc",
       "src": "https://github.com/unblevable/quick-scope"
+    },
+    "quicker.nvim": {
+      "rev": "fc041830fa7cf093786b0d5990d99cf3c7b0c129",
+      "src": "https://github.com/stevearc/quicker.nvim"
     },
     "smart-splits.nvim": {
       "rev": "5442c06d2003a342c27213e580f58af8ddd577c4",
