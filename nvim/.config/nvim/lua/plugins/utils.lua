@@ -197,6 +197,7 @@ local tiny_glimmer = {
                 },
             })
         end,
+        lazy = false,
     }
 }
 
@@ -376,14 +377,38 @@ local bento = {
     }
 }
 
--- TODO: Add dependency
+---@type lz.n.pack.Spec
+local coop = {
+    src = "https://github.com/gregorias/coop.nvim",
+    data = {
+        "coop.nvim",
+        lazy = false,
+    }
+}
+
 ---@type lz.n.pack.Spec
 local coerce = {
     src = "https://github.com/gregorias/coerce.nvim",
     data = {
         "coerce.nvim",
         after = function()
-            require("coerce").setup()
+            require("coerce").setup({
+                default_mode_keymap_prefixes = {
+                    normal_mode = "cr",
+                    motion_mode = "gs",
+                    visual_mode = "gs",
+                },
+                default_mode_mask = {
+                    normal_mode = false,
+                },
+            })
+
+            require("coerce").register_mode {
+                vim_mode = "n",
+                keymap_prefix = "cr",
+                selector = require("coerce.selector").select_current_word,
+                transformer = require("coerce.transformer").transform_local,
+            }
         end,
         lazy = false,
     }
@@ -434,10 +459,13 @@ loader.load_plugins(
             plug = timber,
         },
         {
-            plug = csv_view,
+            plug = bento,
         },
         {
-            plug = bento,
+            plug = coop,
+        },
+        {
+            plug = coerce,
         },
     }
 )

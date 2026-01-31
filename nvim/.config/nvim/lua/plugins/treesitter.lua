@@ -53,10 +53,10 @@ local treesitter_text_objs = {
             -- Keymaps
             -- Functions
             vim.keymap.set({ "x", "o" }, "af", function()
-                require "nvim-treesitter-textobjects.select".select_textobject("@function.outer", "textobjects")
+                require("nvim-treesitter-textobjects.select").select_textobject("@function.outer", "textobjects")
             end)
             vim.keymap.set({ "x", "o" }, "if", function()
-                require "nvim-treesitter-textobjects.select".select_textobject("@function.inner", "textobjects")
+                require("nvim-treesitter-textobjects.select").select_textobject("@function.inner", "textobjects")
             end)
             vim.keymap.set({ "n", "x", "o" }, "]f", function()
                 require("nvim-treesitter-textobjects.move").goto_next_start("@function.outer", "textobjects")
@@ -73,18 +73,18 @@ local treesitter_text_objs = {
 
             -- Loops
             vim.keymap.set({ "x", "o" }, "al", function()
-                require "nvim-treesitter-textobjects.select".select_textobject("@loop.outer", "textobjects")
+                require("nvim-treesitter-textobjects.select").select_textobject("@loop.outer", "textobjects")
             end)
             vim.keymap.set({ "x", "o" }, "il", function()
-                require "nvim-treesitter-textobjects.select".select_textobject("@loop.inner", "textobjects")
+                require("nvim-treesitter-textobjects.select").select_textobject("@loop.inner", "textobjects")
             end)
 
             -- Conditionals
             vim.keymap.set({ "x", "o" }, "ac", function()
-                require "nvim-treesitter-textobjects.select".select_textobject("@conditional.outer", "textobjects")
+                require("nvim-treesitter-textobjects.select").select_textobject("@conditional.outer", "textobjects")
             end)
             vim.keymap.set({ "x", "o" }, "ic", function()
-                require "nvim-treesitter-textobjects.select".select_textobject("@conditional.inner", "textobjects")
+                require("nvim-treesitter-textobjects.select").select_textobject("@conditional.inner", "textobjects")
             end)
             vim.keymap.set({ "n", "x", "o" }, "]c", function()
                 require("nvim-treesitter-textobjects.move").goto_next_start("@conditional.outer", "textobjects")
@@ -179,8 +179,31 @@ local treesitter_various = {
                 keymaps = {
                     useDefaults = false,
                 }
-                -- TODO: add custom key maps
             })
+
+            -- Chain members
+            vim.keymap.set({ "o", "x" }, "am", function() require("various-textobjs").chainMember("outer") end)
+            vim.keymap.set({ "o", "x" }, "im", function() require("various-textobjs").chainMember("inner") end)
+
+            -- Quotes
+            vim.keymap.set({ "o", "x" }, "aq", function() require("various-textobjs").anyQuote("outer") end)
+            vim.keymap.set({ "o", "x" }, "iq", function() require("various-textobjs").anyQuote("inner") end)
+
+            -- Arguements
+            vim.keymap.set({ "o", "x" }, "a,", function() require("various-textobjs").closedFold("outer") end)
+            vim.keymap.set({ "o", "x" }, "i,", function() require("various-textobjs").closedFold("inner") end)
+
+            -- Folds
+            vim.keymap.set({ "o", "x" }, "az", function() require("various-textobjs").argument("outer") end)
+            vim.keymap.set({ "o", "x" }, "iz", function() require("various-textobjs").argument("inner") end)
+
+            -- Keys
+            vim.keymap.set({ "o", "x" }, "ak", function() require("various-textobjs").key("outer") end)
+            vim.keymap.set({ "o", "x" }, "ik", function() require("various-textobjs").key("inner") end)
+
+            -- Values
+            vim.keymap.set({ "o", "x" }, "av", function() require("various-textobjs").value("outer") end)
+            vim.keymap.set({ "o", "x" }, "iv", function() require("various-textobjs").value("inner") end)
         end,
         lazy = false
     }

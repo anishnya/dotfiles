@@ -56,6 +56,10 @@
       "rev": "c2526f1cde528a66e086ab1668e996d162c75f4f",
       "src": "https://github.com/stevearc/conform.nvim"
     },
+    "coop.nvim": {
+      "rev": "85986a6f7390d1362864708dcba097ba0e6b8d39",
+      "src": "https://github.com/gregorias/coop.nvim"
+    },
     "csvview.nvim": {
       "rev": "8d068c526ab5ade68226de036d533298cd93a399",
       "src": "https://github.com/hat0uma/csvview.nvim"
@@ -97,7 +101,7 @@
       "src": "https://github.com/lumen-oss/lz.n"
     },
     "mason-lspconfig.nvim": {
-      "rev": "4823a251e7578a835bb979c37df390fca692ba39",
+      "rev": "c953789db7fd28eafe5eb5659846d34b5024b3cc",
       "src": "https://github.com/mason-org/mason-lspconfig.nvim"
     },
     "mason.nvim": {
@@ -117,7 +121,7 @@
       "src": "https://github.com/rose-pine/neovim"
     },
     "nvim-autopairs": {
-      "rev": "c2a0dd0d931d0fb07665e1fedb1ea688da3b80b4",
+      "rev": "59bce2eef357189c3305e25bc6dd2d138c1683f5",
       "src": "https://github.com/windwp/nvim-autopairs"
     },
     "nvim-colorizer.lua": {
@@ -125,11 +129,11 @@
       "src": "https://github.com/catgoose/nvim-colorizer.lua"
     },
     "nvim-lspconfig": {
-      "rev": "419b082102fa813739588dd82e19a8b6b2442855",
+      "rev": "3f58aeca0c6ece8a9fb8782ea3fcb6024f285be3",
       "src": "https://github.com/neovim/nvim-lspconfig"
     },
     "nvim-origami": {
-      "rev": "c660a3d7e3db602faa5fb6b5ff19ba7a1d9e71fe",
+      "rev": "a0e001f6977368c363054ff43d94d9b49d36929a",
       "src": "https://github.com/chrisgrieser/nvim-origami"
     },
     "nvim-surround": {
@@ -137,7 +141,7 @@
       "src": "https://github.com/kylechui/nvim-surround"
     },
     "nvim-treesitter": {
-      "rev": "568ede7e79172a0fe7c9d631454a97ad968deaf2",
+      "rev": "19c729dae6e0eeb79423df0cf37780aa9a7cc3b7",
       "src": "https://github.com/nvim-treesitter/nvim-treesitter",
       "version": "'main'"
     },
@@ -146,7 +150,7 @@
       "src": "https://github.com/nvim-treesitter/nvim-treesitter-context"
     },
     "nvim-treesitter-textobjects": {
-      "rev": "52bda74e087034408e2d563cb4499c1601038f9d",
+      "rev": "a0e182ae21fda68c59d1f36c9ed45600aef50311",
       "src": "https://github.com/nvim-treesitter/nvim-treesitter-textobjects",
       "version": "'main'"
     },
@@ -155,7 +159,7 @@
       "src": "https://github.com/windwp/nvim-ts-autotag"
     },
     "nvim-various-textobjs": {
-      "rev": "71bd98e08e96a730a60566f929a6ac3974ede0e0",
+      "rev": "222869e08cb7224fc1f09e071b70f2e1b20f2d28",
       "src": "https://github.com/chrisgrieser/nvim-various-textobjs"
     },
     "nvim-web-devicons": {
@@ -183,7 +187,7 @@
       "src": "https://github.com/stevearc/quicker.nvim"
     },
     "smart-splits.nvim": {
-      "rev": "5442c06d2003a342c27213e580f58af8ddd577c4",
+      "rev": "0e73ccf1d957c6d7b95435bd195dcbd62f44f8e2",
       "src": "https://github.com/mrjones2014/smart-splits.nvim"
     },
     "smear-cursor.nvim": {
