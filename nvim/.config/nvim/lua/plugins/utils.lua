@@ -392,7 +392,9 @@ local coerce = {
     data = {
         "coerce.nvim",
         after = function()
-            require("coerce").setup({
+            local coerce = require("coerce")
+
+            coerce.setup({
                 default_mode_keymap_prefixes = {
                     normal_mode = "cr",
                     motion_mode = "gs",
@@ -403,7 +405,7 @@ local coerce = {
                 },
             })
 
-            require("coerce").register_mode {
+            coerce.register_mode {
                 vim_mode = "n",
                 keymap_prefix = "cr",
                 selector = require("coerce.selector").select_current_word,

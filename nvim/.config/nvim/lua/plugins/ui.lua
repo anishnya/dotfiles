@@ -21,10 +21,16 @@ local flash = {
     src = "https://github.com/folke/flash.nvim",
     data = {
         "flash.nvim",
+        keys = {
+            { "f" },
+            { "F" },
+            { "t" },
+            { "T" },
+            { "m", mode = { "n", "x", "o" }, function() require("flash").jump() end, desc = "Flash" },
+        },
         after = function()
             require("flash").setup()
         end,
-        lazy = false,
     }
 }
 
