@@ -17,24 +17,6 @@ local color_scheme = {
 }
 
 ---@type lz.n.pack.Spec
-local flash = {
-    src = "https://github.com/folke/flash.nvim",
-    data = {
-        "flash.nvim",
-        keys = {
-            { "f" },
-            { "F" },
-            { "t" },
-            { "T" },
-            { "m", mode = { "n", "x", "o" }, function() require("flash").jump() end, desc = "Flash" },
-        },
-        after = function()
-            require("flash").setup()
-        end,
-    }
-}
-
----@type lz.n.pack.Spec
 local smear_cursor = {
     src = "https://github.com/sphamba/smear-cursor.nvim",
     data = {
@@ -267,9 +249,6 @@ loader.load_plugins({
     },
     {
         plug = modicator,
-    },
-    {
-        plug = flash,
     },
     {
         plug = win_seperator,

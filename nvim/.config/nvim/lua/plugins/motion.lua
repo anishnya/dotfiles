@@ -1,6 +1,24 @@
 local loader = require("utils.loader")
 
 ---@type lz.n.pack.Spec
+local flash = {
+    src = "https://github.com/folke/flash.nvim",
+    data = {
+        "flash.nvim",
+        keys = {
+            { "f" },
+            { "F" },
+            { "t" },
+            { "T" },
+            { "m", mode = { "n", "x", "o" }, function() require("flash").jump() end, desc = "Flash" },
+        },
+        after = function()
+            require("flash").setup()
+        end,
+    }
+}
+
+---@type lz.n.pack.Spec
 local matchup = {
     src = "https://github.com/andymass/vim-matchup",
     data = {
@@ -20,6 +38,9 @@ loader.load_plugins(
     {
         {
             plug = matchup,
+        },
+        {
+            plug = flash,
         },
     }
 )

@@ -425,9 +425,6 @@ loader.load_plugins(
             plug = web_dev_icons,
         },
         {
-            plug = todo,
-        },
-        {
             plug = atone,
         },
         {

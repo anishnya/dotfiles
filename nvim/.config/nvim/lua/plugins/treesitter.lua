@@ -6,7 +6,60 @@ local treesitter = {
     data = {
         "nvim-treesitter",
         after = function()
-            vim.cmd([[TSUpdate]])
+            local ts = require("nvim-treesitter")
+            local parsers = {
+                "bash",
+                "comment",
+                "c",
+                "cpp",
+                "css",
+                "diff",
+                "dockerfile",
+                "git_config",
+                "gitcommit",
+                "gitignore",
+                "go",
+                "html",
+                "javascript",
+                "jsdoc",
+                "json",
+                "lua",
+                "make",
+                "markdown",
+                "markdown_inline",
+                "python",
+                "regex",
+                "rst",
+                "rust",
+                "scss",
+                "ssh_config",
+                "tsx",
+                "typescript",
+                "vim",
+                "vimdoc",
+                "yaml",
+            }
+
+            for _, parser in ipairs(parsers) do
+                ts.install(parser)
+            end
+
+            -- Not every tree-sitter parser is the same as the file type detected
+            -- So the patterns need to be registered more cleverly
+            local patterns = {}
+            for _, parser in ipairs(parsers) do
+                local parser_patterns = vim.treesitter.language.get_filetypes(parser)
+                for _, pp in pairs(parser_patterns) do
+                    table.insert(patterns, pp)
+                end
+            end
+
+            vim.api.nvim_create_autocmd('FileType', {
+                pattern = patterns,
+                callback = function()
+                    vim.treesitter.start()
+                end,
+            })
         end,
         lazy = false
     }
