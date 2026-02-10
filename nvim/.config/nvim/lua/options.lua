@@ -60,4 +60,4 @@ vim.g.netrw_sort_by = "size"
 
 vim.diagnostic.config({ virtual_text = false })
 
-require("vim._extui").enable({})
+require("vim._core.ui2").enable({})
