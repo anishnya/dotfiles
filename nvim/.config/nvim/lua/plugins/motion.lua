@@ -41,7 +41,14 @@ local vai = {
         "vai.nvim",
         after = function()
             require('vai').setup({
-                trigger = '\\',
+                trigger = '\\',       -- trigger key
+                sweet_spot_start = 6, -- easiest combos start here
+                sweet_spot_end = 15,  -- easiest combos end here
+                labels = {            -- customize letters (e.g., for Dvorak)
+                    'a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l',
+                    'w', 'e', 'r', 't', 'y', 'u', 'i', 'o',
+                    'c', 'v', 'n',
+                },
             })
         end,
         lazy = false,
