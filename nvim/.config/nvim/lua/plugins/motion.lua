@@ -34,6 +34,20 @@ local matchup = {
     }
 }
 
+---@type lz.n.pack.Spec
+local vai = {
+    src = "https://github.com/johnpmitsch/vai.nvim",
+    data = {
+        "vai.nvim",
+        after = function()
+            require('vai').setup({
+                trigger = '\\',
+            })
+        end,
+        lazy = false,
+    }
+}
+
 loader.load_plugins(
     {
         {
@@ -41,6 +55,9 @@ loader.load_plugins(
         },
         {
             plug = flash,
+        },
+        {
+            plug = vai,
         },
     }
 )
