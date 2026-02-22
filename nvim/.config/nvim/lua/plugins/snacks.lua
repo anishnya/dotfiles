@@ -4,90 +4,14 @@ local snacks = {
     src = "https://github.com/folke/snacks.nvim",
     data = {
         "snacks.nvim",
-        keys = {
-            -- Top Pickers & Explorer
-            { "<leader>n",   function() Snacks.picker.notifications() end,                           desc = "Notification History" },
-            { "<leader>e",   function() Snacks.explorer() end,                                       desc = "File Explorer" },
-
-            -- find
-            { "<leader>fb",  function() Snacks.picker.buffers() end,                                 desc = "Buffers" },
-            { "<leader>fc",  function() Snacks.picker.files({ cwd = vim.fn.stdpath("config") }) end, desc = "Find Config File" },
-            { "<leader>ff",  function() Snacks.picker.files({ hidden = true }) end,                  desc = "Find Files" },
-            { "<leader>fr",  function() Snacks.picker.recent() end,                                  desc = "Recent" },
-
-            -- Grep
-            { "<leader>sg",  function() Snacks.picker.grep({ hidden = true }) end,                   desc = "Grep" },
-            { "<leader>sB",  function() Snacks.picker.grep_buffers() end,                            desc = "Grep Open Buffers" },
-            { "<leader>sw",  function() Snacks.picker.grep_word() end,                               desc = "Visual selection or word", mode = { "n", "x" } },
-
-            -- Search
-            { '<leader>s"',  function() Snacks.picker.registers() end,                               desc = "Registers" },
-            { '<leader>s/',  function() Snacks.picker.search_history() end,                          desc = "Search History" },
-            { "<leader>sa",  function() Snacks.picker.autocmds() end,                                desc = "Autocmds" },
-            { "<leader>sb",  function() Snacks.picker.lines() end,                                   desc = "Buffer Lines" },
-            { "<leader>sc",  function() Snacks.picker.command_history() end,                         desc = "Command History" },
-            { "<leader>sC",  function() Snacks.picker.commands() end,                                desc = "Commands" },
-            { "<leader>sd",  function() Snacks.picker.diagnostics() end,                             desc = "Diagnostics" },
-            { "<leader>sD",  function() Snacks.picker.diagnostics_buffer() end,                      desc = "Buffer Diagnostics" },
-            { "<leader>sj",  function() Snacks.picker.jumps() end,                                   desc = "Jumps" },
-            { "<leader>sk",  function() Snacks.picker.keymaps() end,                                 desc = "Keymaps" },
-            { "<leader>sl",  function() Snacks.picker.loclist() end,                                 desc = "Location List" },
-            { "<leader>sm",  function() Snacks.picker.marks() end,                                   desc = "Marks" },
-            { "<leader>sM",  function() Snacks.picker.man() end,                                     desc = "Man Pages" },
-            { "<leader>sq",  function() Snacks.picker.qflist() end,                                  desc = "Quickfix List" },
-            { "<leader>sR",  function() Snacks.picker.resume() end,                                  desc = "Resume" },
-            { "<leader>su",  function() Snacks.picker.undo() end,                                    desc = "Undo History" },
-
-            -- LSP
-            { "<leader>gd",  function() Snacks.picker.lsp_definitions() end,                         desc = "Goto Definition" },
-            { "<leader>gD",  function() Snacks.picker.lsp_declarations() end,                        desc = "Goto Declaration" },
-            { "<leader>gr",  function() Snacks.picker.lsp_references() end,                          nowait = true,                     desc = "References" },
-            { "<leader>gI",  function() Snacks.picker.lsp_implementations() end,                     desc = "Goto Implementation" },
-            { "<leader>gy",  function() Snacks.picker.lsp_type_definitions() end,                    desc = "Goto T[y]pe Definition" },
-            { "<leader>gai", function() Snacks.picker.lsp_incoming_calls() end,                      desc = "C[a]lls Incoming" },
-            { "<leader>gao", function() Snacks.picker.lsp_outgoing_calls() end,                      desc = "C[a]lls Outgoing" },
-            { "<leader>go",  function() Snacks.picker.lsp_symbols() end,                             desc = "LSP Symbols" },
-            { "<leader>gO",  function() Snacks.picker.lsp_workspace_symbols() end,                   desc = "LSP Workspace Symbols" },
-
-            -- Extras
-            { "<leader>p",   function() Snacks.picker.yanky() end,                                   mode = { "n", "x" },               desc = "Open Yank History" },
-        },
         after = function()
             require("snacks").setup({
-                explorer = { enabled = true },
-                picker = {
-                    enabled = true,
-                    layout = {
-                        reverse = true,
-                        layout = {
-                            box = "horizontal",
-                            backdrop = false,
-                            width = 0.8,
-                            height = 0.9,
-                            border = "none",
-                            {
-                                box = "vertical",
-                                { win = "list",  title = " Results ", title_pos = "center", border = true },
-                                { win = "input", height = 1,          border = true,        title = "{title} {live} {flags}", title_pos = "center" },
-                            },
-                            {
-                                win = "preview",
-                                title = "{preview:Preview}",
-                                width = 0.45,
-                                border = true,
-                                title_pos = "center",
-                            },
-                        },
-                    },
-                },
-                input = { enabled = true },
                 dashboard = {
                     keys = {
-                        { icon = " ", key = "f", desc = "Find File", action = ":lua Snacks.dashboard.pick('files')" },
+                        { icon = " ", key = "f", desc = "Find File", action = ":lua MiniPick.builtin.files()" },
                         { icon = " ", key = "n", desc = "New File", action = ":ene | startinsert" },
                         { icon = " ", key = "o", desc = "Open Explorer", action = "<leader>=" },
-                        { icon = " ", key = "g", desc = "Find Text", action = ":lua Snacks.dashboard.pick('live_grep')" },
-                        { icon = " ", key = "c", desc = "Config", action = ":lua Snacks.dashboard.pick('files', {cwd = vim.fn.stdpath('config')})" },
+                        { icon = " ", key = "g", desc = "Find Text", action = ":lua MiniPick.builtin.grep()" },
                         { icon = " ", key = "q", desc = "Quit", action = ":qa" },
                     },
                     sections = {
@@ -115,7 +39,6 @@ local snacks = {
                         },
                     },
                 },
-                notifier = { enabled = true }
             })
         end,
         lazy = false,

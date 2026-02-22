@@ -1,12 +1,12 @@
 -- Plugin Setup
 require("plugins.lz")
-require("plugins.snacks")
 require("plugins.treesitter")
 require("plugins.gitsigns")
 require("plugins.motion")
 require("plugins.ui")
 require("plugins.editor")
 require("plugins.lsp")
+require("plugins.mini")
 require("plugins.blink")
 require("plugins.splits")
 require("plugins.utils")

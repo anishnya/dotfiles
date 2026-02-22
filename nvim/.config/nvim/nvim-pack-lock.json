@@ -132,9 +132,17 @@
       "rev": "a0c721115faff8d05505c0a12dab410084d9e536",
       "src": "https://github.com/nvim-mini/mini.comment"
     },
+    "mini.extra": {
+      "rev": "693e9830899f9d69bb87b70186bcb331c8c9c986",
+      "src": "https://github.com/nvim-mini/mini.extra"
+    },
     "mini.pairs": {
       "rev": "b9aada8c0e59f2b938e98fbf4eae0799eba96ad9",
       "src": "https://github.com/nvim-mini/mini.pairs"
+    },
+    "mini.pick": {
+      "rev": "8521fe21df86e08d9e4b3c3f3a7d50e47954e1af",
+      "src": "https://github.com/nvim-mini/mini.pick"
     },
     "modicator.nvim": {
       "rev": "0bc989b32a7ba3cab06cb79a433557384eb2a0be",
