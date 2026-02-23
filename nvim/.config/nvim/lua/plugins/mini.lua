@@ -97,6 +97,7 @@ local mini_extras = {
         after = function()
             require('mini.extra').setup()
         end,
+        lazy = false,
     }
 }
 

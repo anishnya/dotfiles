@@ -12,6 +12,10 @@
       "rev": "7a6a42791eb2b54a7115c7db4488981f93471770",
       "src": "https://github.com/stevearc/aerial.nvim"
     },
+    "alpha-nvim": {
+      "rev": "a9d8fb72213c8b461e791409e7feabb74eb6ce73",
+      "src": "https://github.com/goolord/alpha-nvim"
+    },
     "arrow.nvim": {
       "rev": "6e0f726f55f99332dd726a53effd6813786b6d49",
       "src": "https://github.com/otavioschwanck/arrow.nvim"
