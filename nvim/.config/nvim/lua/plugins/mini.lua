@@ -82,6 +82,8 @@ local mini_extras = {
             { '<leader>fk', function() require("mini.extra").pickers.keymaps() end,                           desc = "Find keymaps" },
             { '<leader>fq', function() require("mini.extra").pickers.qflist() end,                            desc = "Find quickfix list" },
             { '<leader>ft', function() require("mini.extra").pickers.treesitter() end,                        desc = "Find Treesitter Nodes" },
+            { '<leader>fi', function() require("mini.extra").pickers.history() end,                           desc = "Search command history" },
+            { '<leader>fc', function() require("mini.extra").pickers.commands() end,                          desc = "Find commands" },
 
             -- LSP Navigation
             { '<leader>gd', function() require("mini.extra").pickers.lsp({ scope = "definition" }) end,       desc = "Go to defintion" },

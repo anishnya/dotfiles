@@ -51,13 +51,11 @@ local oil = {
 
 ---@type lz.n.pack.Spec
 local oil_git = {
-    src = "https://github.com/anishnya/oil-git.nvim",
+    src = "https://github.com/malewicz1337/oil-git.nvim",
     data = {
         "oil-git.nvim",
         after = function()
-            require("oil-git").setup({
-                untracked_cache = true,
-            })
+            require("oil-git").setup()
         end,
         lazy = false,
     },
@@ -435,6 +433,9 @@ loader.load_plugins(
         },
         {
             plug = oil,
+        },
+        {
+            plug = oil_git,
         },
         {
             plug = aerial,

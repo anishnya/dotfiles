@@ -242,13 +242,13 @@ local treesitter_various = {
             vim.keymap.set({ "o", "x" }, "aq", function() require("various-textobjs").anyQuote("outer") end)
             vim.keymap.set({ "o", "x" }, "iq", function() require("various-textobjs").anyQuote("inner") end)
 
-            -- Arguements
-            vim.keymap.set({ "o", "x" }, "a,", function() require("various-textobjs").closedFold("outer") end)
-            vim.keymap.set({ "o", "x" }, "i,", function() require("various-textobjs").closedFold("inner") end)
-
             -- Folds
-            vim.keymap.set({ "o", "x" }, "az", function() require("various-textobjs").argument("outer") end)
-            vim.keymap.set({ "o", "x" }, "iz", function() require("various-textobjs").argument("inner") end)
+            vim.keymap.set({ "o", "x" }, "az", function() require("various-textobjs").closedFold("outer") end)
+            vim.keymap.set({ "o", "x" }, "iz", function() require("various-textobjs").closedFold("inner") end)
+
+            -- Arguments
+            vim.keymap.set({ "o", "x" }, "a,", function() require("various-textobjs").argument("outer") end)
+            vim.keymap.set({ "o", "x" }, "i,", function() require("various-textobjs").argument("inner") end)
 
             -- Keys
             vim.keymap.set({ "o", "x" }, "ak", function() require("various-textobjs").key("outer") end)
