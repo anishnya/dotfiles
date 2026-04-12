@@ -190,7 +190,6 @@ local tiny_glimmer = {
                 },
 
                 hijack_ft_disabled = {
-                    "alpha",
                     "snacks_dashboard",
                 },
             })
@@ -316,15 +315,6 @@ local aerial = {
 }
 
 ---@type lz.n.pack.Spec
-local plenary = {
-    src = "https://github.com/nvim-lua/plenary.nvim",
-    data = {
-        "plenary.nvim",
-        lazy = false,
-    }
-}
-
----@type lz.n.pack.Spec
 local todo = {
     src = "https://github.com/folke/todo-comments.nvim",
     data = {
@@ -422,9 +412,6 @@ local coerce = {
 
 loader.load_plugins(
     {
-        {
-            plug = plenary,
-        },
         {
             plug = web_dev_icons,
         },
